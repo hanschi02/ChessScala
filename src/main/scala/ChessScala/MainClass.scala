@@ -1,6 +1,6 @@
 package ChessScala
 
-object Main {
+object MainClass {
 
   val cell: String = "|" + " " * 8
 
