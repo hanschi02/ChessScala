@@ -1,0 +1,30 @@
+# Mac
+*.DS_Store
+
+
+# Intellij
+.idea/
+target/
+
+# sbt
+project/boot/
+project/plugins/project/
+project/target/
+project/project/
+project/.sbtserver
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+.bsp
+
+#VS Code
+/.vscode/
+/.metals/
+=======
+.metals/
+
+.vscode/
+.bloop
+project/metals.sbt
+.scalafmt.conf
