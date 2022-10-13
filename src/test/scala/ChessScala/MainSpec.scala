@@ -5,8 +5,8 @@ import org.scalatest.wordspec.AnyWordSpec
 
 class MainSpec extends AnyWordSpec with Matchers{
 
-  val border: String = MainClass.drawBorder(1)
   val line: String = MainClass.drawLine(1)
+  val border: String = MainClass.drawBorder(1)
   val field: String = MainClass.drawField(1)
 
   "The main class " should {
