@@ -1,16 +1,11 @@
 package ChessScala
+import scala.io.StdIn
 
 object MainClass {
 
-  val cell: String = "|" + " " * 8
-
-  val EOL: String = "\n"
-
-  def drawBorder(size: Int): String = "-" * size * 8 + EOL
-
-  def drawLine(size: Int): String = drawBorder(size) + cell * size + EOL
-
-  def drawField(size: Int): String = drawLine(size) * size + drawBorder(size)
-
-  @main def main(): Unit = println(drawField(8))
+  @main def main():Unit =
+    val tui = new TUI
+    while(true){
+      tui.readLine()
+    }
 }
