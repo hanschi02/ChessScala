@@ -1,6 +1,8 @@
-package ChessScala
-import org.scalatest.wordspec.AnyWordSpec
+package ChessScala.model
+
+import ChessScala.model.{GameInterpreter, Interpreter}
 import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
 class GameInterpreterSpec extends AnyWordSpec with Matchers {
   val interpreter = new GameInterpreter
