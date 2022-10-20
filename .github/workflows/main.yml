@@ -27,7 +27,7 @@ jobs:
           apt install curl -y
       - name: Run tests
         run:
-          sbt clean test jacoco
+          sbt clean test coverage
       - name: Upload report to Codecov
         run: |
           curl -Os https://uploader.codecov.io/latest/linux/codecov
