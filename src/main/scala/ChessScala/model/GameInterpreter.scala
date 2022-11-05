@@ -6,8 +6,8 @@ class GameInterpreter extends Interpreter {
 
   override val descriptor: String = "Please enter your Move"
 
-  val move:String = "[a-zA-Z][1-8][a-zA-Z][1-8]"
-  val moveWithSpace: String = "[a-zA-Z][1-8] [a-zA-Z][1-8]"
+  val move:String = "[a-hA-H][1-8][a-hA-H][1-8]"
+  val moveWithSpace: String = "[a-hA-H][1-8] [a-hA-H][1-8]"
   val wrongMove: String = ".*"
 
   def doMove(input: String): (String, GameInterpreter) =
