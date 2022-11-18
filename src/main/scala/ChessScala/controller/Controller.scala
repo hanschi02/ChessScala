@@ -1,6 +1,6 @@
 package ChessScala.controller
 import ChessScala.util.Observable
-import ChessScala.model.{Interpreter, MenuInterpreter}
+import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
 
 class Controller() extends Observable {
 
