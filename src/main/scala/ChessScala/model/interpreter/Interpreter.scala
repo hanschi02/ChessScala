@@ -1,4 +1,4 @@
-package ChessScala.model
+package ChessScala.model.interpreter
 
 trait Interpreter {
 

@@ -1,6 +1,6 @@
-package ChessScala.model
+package ChessScala.model.interpreter
 
-import ChessScala.model.{GameInterpreter, Interpreter}
+import ChessScala.model.interpreter.{GameInterpreter, Interpreter}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
