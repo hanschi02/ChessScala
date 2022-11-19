@@ -3,9 +3,9 @@ import ChessScala.model.board.{Board, Coordinate}
 
 trait King {
 
-  def getAttacks(position: Coordinate, board: Board): Vector[Coordinate] = Vector()
+  protected def getAttacks(position: Coordinate, board: Board): Vector[Coordinate] = Vector()
 
-  def getMotion(position: Coordinate, board: Board): Vector[Coordinate] = Vector()
+  protected def getMotion(position: Coordinate, board: Board): Vector[Coordinate] = Vector()
 
 }
 
