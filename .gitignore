@@ -28,3 +28,5 @@ project/.sbtserver
 .bloop
 project/metals.sbt
 .scalafmt.conf
+
+src/main/scala/ChessScala/Test.sc
