@@ -1,6 +1,7 @@
 package ChessScala.model.figureStrategies
 import org.scalatest.matchers.should.Matchers
 import ChessScala.model.board.{Board, BoardBuilder, Coordinate}
+import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
 import org.scalatest.wordspec.AnyWordSpec
 
 class PawnSpec extends AnyWordSpec with Matchers {
@@ -19,7 +20,7 @@ class PawnSpec extends AnyWordSpec with Matchers {
 
       moves should contain (Coordinate(0, 1))
 
-      moves should contain noneOf(Coordinate(0, 0), Coordinate(1, 0), Coordinate(1, 0), Coordinate(0, 2))
+      moves should contain noneOf(Coordinate(0, 0), Coordinate(1, 0), Coordinate(1, 1), Coordinate(0, 2))
 
     }
 
@@ -40,6 +41,13 @@ class PawnSpec extends AnyWordSpec with Matchers {
       moves should contain (Coordinate(1, 1))
       moves should contain noneOf(Coordinate(0, 0), Coordinate(0, 1))
     }
+
+    "attack en passant" in {
+      val enemy: Pawn = new EnPassantPawn(Black)
+      val boardEnemy: Board = board.insert(Coordinate(1, 0), enemy)
+      val moves: Vector[Coordinate] = pawn.getMoves(position, boardEnemy)
+      moves should contain (Coordinate(1, 1))
+    }
   }
 
   "A black pawn " should {
@@ -55,7 +63,7 @@ class PawnSpec extends AnyWordSpec with Matchers {
 
       moves should contain(Coordinate(0, 6))
 
-      moves should contain noneOf(Coordinate(0, 7), Coordinate(1, 7), Coordinate(1, 7), Coordinate(0, 5))
+      moves should contain noneOf(Coordinate(0, 7), Coordinate(1, 7), Coordinate(1, 6), Coordinate(0, 5))
 
     }
 
@@ -75,6 +83,13 @@ class PawnSpec extends AnyWordSpec with Matchers {
       val moves: Vector[Coordinate] = pawn.getMoves(position, boardEnemy)
       moves should contain(Coordinate(1, 1))
       moves should contain noneOf(Coordinate(0, 7), Coordinate(0, 6))
+    }
+
+    "attack en passant" in {
+      val enemy: Pawn = new EnPassantPawn(White)
+      val boardEnemy: Board = board.insert(Coordinate(1, 7), enemy)
+      val moves: Vector[Coordinate] = pawn.getMoves(position, boardEnemy)
+      moves should contain (Coordinate(1, 6))
     }
   }
 }
