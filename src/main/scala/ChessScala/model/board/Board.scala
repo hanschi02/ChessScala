@@ -19,4 +19,5 @@ class Board(val map: Map[Coordinate, Option[Figure]]) {
 
   def foreach(team: Team, func: Option[Figure] => Option[Figure]): Board =
     new Board(map.map(k=> if (k._2.isDefined && k._2.get.team == team) (k._1,func(k._2)) else (k._1,k._2)))
+
 }
