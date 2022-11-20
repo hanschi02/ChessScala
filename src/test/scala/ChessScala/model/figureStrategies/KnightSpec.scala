@@ -17,8 +17,7 @@ class KnightSpec extends AnyWordSpec with Matchers {
 
       val moves : Vector[Coordinate] = knight.getMoves(position, board)
 
-      moves should contain allOf(Coordinate(1, 2), Coordinate(2, 1), Coordinate(1,-2), Coordinate(-1,2),
-        Coordinate(-1,-2), Coordinate(-2,1), Coordinate(2,-1), Coordinate(-2,-1))
+      moves should contain allOf(Coordinate(1, 2), Coordinate(2, 1))
 
       moves should contain noneOf(Coordinate(0,0), Coordinate(1,1), Coordinate(1,0), Coordinate(4,5))
     }
@@ -30,11 +29,8 @@ class KnightSpec extends AnyWordSpec with Matchers {
 
       val moves : Vector[Coordinate] = knight.getMoves(position, boardPawn)
       
-      moves should contain allOf(Coordinate(1, -2), Coordinate(-1, 2),
-        Coordinate(-1, -2), Coordinate(-2, 1), Coordinate(2, -1), Coordinate(-2, -1))
+      moves.isEmpty should be (true)
 
-      moves should contain noneOf(Coordinate(1,2), Coordinate(2,1), Coordinate(1,0), Coordinate(4,5))
-      
     }
     
     "return all possible attacks with the board containing an enemy" in {

@@ -33,6 +33,10 @@ class GroundPawnSpec extends AnyWordSpec with Matchers{
       val moves: Vector[Coordinate] = pawn.getMoves(position, boardPawn)
 
       moves should not contain (Coordinate(0, 3))
+
+      val newBoard: Board = board.insert(Coordinate(0,2), friend)
+      val newMoves: Vector[Coordinate] = pawn.getMoves(position, newBoard)
+      newMoves.isEmpty should be (true)
     }
   }
 }

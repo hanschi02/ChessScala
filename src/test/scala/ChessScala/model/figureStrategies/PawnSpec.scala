@@ -81,7 +81,7 @@ class PawnSpec extends AnyWordSpec with Matchers {
       val enemy: Pawn = new Pawn(White)
       val boardEnemy: Board = board.insert(Coordinate(0, 6), enemy).insert(Coordinate(1, 6), enemy)
       val moves: Vector[Coordinate] = pawn.getMoves(position, boardEnemy)
-      moves should contain(Coordinate(1, 1))
+      moves should contain(Coordinate(1, 6))
       moves should contain noneOf(Coordinate(0, 7), Coordinate(0, 6))
     }
 

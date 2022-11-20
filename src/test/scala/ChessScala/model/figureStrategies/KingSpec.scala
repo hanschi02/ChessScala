@@ -27,7 +27,7 @@ class KingSpec extends AnyWordSpec with Matchers {
 
       val moves: Vector[Coordinate] = BlackKing.getMoves(position, boardPawn)
 
-      moves should contain(Coordinate(1, 0), (0, 1))
+      moves should contain allOf(Coordinate(1, 0), Coordinate(0, 1))
 
       moves should contain noneOf(Coordinate(1, 1), Coordinate(3, 3), Coordinate(4, 4))
 
@@ -41,9 +41,7 @@ class KingSpec extends AnyWordSpec with Matchers {
       val attacks: Vector[Coordinate] = BlackKing.getMoves(position, boardEnemy)
 
       attacks should contain(Coordinate(1, 1))
-
-      attacks should contain noneOf(Coordinate(1, 0), Coordinate(0, 1))
-
+      
     }
 
   }

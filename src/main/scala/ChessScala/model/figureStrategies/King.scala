@@ -1,14 +1,20 @@
 package ChessScala.model.figureStrategies
 import ChessScala.model.board.{Board, Coordinate}
 
-trait King {
+trait King(team: Team) {
+  val directions: Vector[(Int, Int)] = Vector((1, 0), (-1, 0), (0, 1), (0, -1),(1, 1), (1, -1), (-1, 1), (-1, -1))
 
-  protected def getAttacks(position: Coordinate, board: Board): Vector[Coordinate] = Vector()
+  def getDirectionVector(position: Coordinate): Vector[Coordinate] =
+    directions.map(k => Coordinate(position.x + k._1, position.y + k._2))
 
-  protected def getMotion(position: Coordinate, board: Board): Vector[Coordinate] = Vector()
+  def getAttacks(position: Coordinate, board: Board): Vector[Coordinate] =
+    getDirectionVector(position).filter(board.is_occupied).filter(board.get(_).get.team != team)
+
+  def getMotion(position: Coordinate, board: Board): Vector[Coordinate] =
+    getDirectionVector(position).filter(board.is_free)
 
 }
 
-object BlackKing extends Figure(Black) with King
+object BlackKing extends Figure(Black) with King(Black)
 
-object WhiteKing extends Figure(White) with King
+object WhiteKing extends Figure(White) with King(White)
