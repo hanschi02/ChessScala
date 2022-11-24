@@ -9,5 +9,7 @@ class BoardBuilder(size : Int) {
   val coordinates: Seq[Coordinate] = range.flatMap{ x => range.map(y => new Coordinate(x, y))}
 
   def createEmptyBoard() : Board = new Board(coordinates.map(k => (k, None)).toMap)
+  
+  def createChessBoard() : Board = createEmptyBoard()
 
 }
