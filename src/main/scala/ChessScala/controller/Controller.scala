@@ -1,19 +1,20 @@
 package ChessScala.controller
+import ChessScala.model.gameState.{MenuState, ProgrammState}
 import ChessScala.util.Observable
-import ChessScala.model.{Interpreter, MenuInterpreter}
+import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
 
 class Controller() extends Observable {
-
-  var interpreter: Interpreter = new MenuInterpreter
+  
   var output: String = "test"
+  var state: ProgrammState = new MenuState
 
   def computeInput(input: String): Unit =
-    val result = interpreter.processInputLine(input)
-    interpreter = result._2
-    output = result._1
+    val result = state.handle(input)
+    output = result._2
+    state = result._1
     notifyObservers()
 
   def printDescriptor(): Unit =
-    output = interpreter.descriptor
+    output = state.interpreter.descriptor
     notifyObservers()
 }
