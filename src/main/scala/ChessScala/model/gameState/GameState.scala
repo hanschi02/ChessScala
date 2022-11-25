@@ -13,7 +13,8 @@ class GameState(val team: Team, val board: Board) extends ProgrammState {
 
   override def handle(input: String): (ProgrammState, String) =
     val interpreterResult = interpreter.processInputLine(input)
-    if (!interpreterResult._2) {(this, interpreterResult._1)}
+    return (this, interpreterResult._1)
+    if (!interpreterResult._2) {return (this, interpreterResult._1)}
     val move: Move = MoveDecoder.decode(input)
     val handler: GameChain = new MoveHandler(move)
     val handlerResult = Try[ProgrammState]{handler.handle(this).get}
