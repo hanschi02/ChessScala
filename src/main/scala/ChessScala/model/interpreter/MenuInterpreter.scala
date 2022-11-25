@@ -9,10 +9,10 @@ class MenuInterpreter extends Interpreter {
   val newGame: String = "1"
   val wrongInput: String = ".*"
 
-  def doNewGame(input: String): (String, GameInterpreter) = ("",new GameInterpreter)
+  def doNewGame(input: String): (String, Boolean) = ("", true)
 
-  def doWrongInput(input: String): (String, MenuInterpreter) = ("Wrong input. Please try again.", this)
+  def doWrongInput(input: String): (String, Boolean) = ("Wrong input. Please try again.", false)
 
-  override val actions: Map[String, String => (String, Interpreter)] =
+  override val actions: Map[String, String => (String, Boolean)] =
     Map((wrongInput, doWrongInput),(newGame,doNewGame))
 }

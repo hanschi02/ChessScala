@@ -6,10 +6,10 @@ import org.scalatest.wordspec.AnyWordSpec
 
 class GameInterpreterSpec extends AnyWordSpec with Matchers {
   val interpreter = new GameInterpreter
-  val didMove: (String, Interpreter) = interpreter.processInputLine("e2e4")
-  val didMoveUpper: (String, Interpreter) = interpreter.processInputLine("E2E4")
-  val didMoveWithSpace: (String, Interpreter) = interpreter.processInputLine("e2 e4")
-  val wrongMove: (String, Interpreter) = interpreter.processInputLine("e2e9")
+  val didMove: (String, Boolean) = interpreter.processInputLine("e2e4")
+  val didMoveUpper: (String, Boolean) = interpreter.processInputLine("E2E4")
+  val didMoveWithSpace: (String, Boolean) = interpreter.processInputLine("e2 e4")
+  val wrongMove: (String, Boolean) = interpreter.processInputLine("e2e9")
 
   "The Interpreter should" should {
     "have the right descriptor" in {
@@ -30,10 +30,10 @@ class GameInterpreterSpec extends AnyWordSpec with Matchers {
     }
 
     "return the correct interpreter" in {
-      didMove._2 should be (interpreter)
-      didMoveUpper._2 should be (interpreter)
-      didMoveWithSpace._2 should be (interpreter)
-      wrongMove._2 should be (interpreter)
+      didMove._2 should be (true)
+      didMoveUpper._2 should be (true)
+      didMoveWithSpace._2 should be (true)
+      wrongMove._2 should be (false)
     }
   }
 
