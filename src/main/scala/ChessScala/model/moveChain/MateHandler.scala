@@ -13,16 +13,16 @@ class MateHandler(team: Team) extends GameChain {
 
   override def handle(state: GameState): Option[ProgrammState] = None
 
-  def allMoves(team: Team, board: Board): Vector[Board] =
-    board.map.filter(_._2.isDefined)
+  def allMoves(team: Team, board: Board): Vector[Board] = Vector()
+ /*   board.map.filter(_._2.isDefined)
       .filter(_._2.get.team == team)
       .flatMap(k=> (k, k._2.get.getMoves(k._1, board)))
 
-
+*/
 
   def isCheck(team: Team, board: Board): Boolean = (new ConcreteCheckBridge).isCheck(team, board)
 
-  def isStaleMate(team: Team,board: Board): Boolean =
+ // def isStaleMate(team: Team,board: Board): Boolean =
 
 
 }

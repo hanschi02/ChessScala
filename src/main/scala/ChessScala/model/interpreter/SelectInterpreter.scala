@@ -13,7 +13,7 @@ class SelectInterpreter extends Interpreter {
       case "knight" => ("Knight selected", true)
       case "rook" => ("Rook selected", true)
       case "bishop" => ("Bishop selected", true)
-      case _ => ("Non eligibale figure", false)
+      case _ => ("Non eligible figure", false)
 
 
   val actions: Map[String, String => (String, Boolean)] = Map((".*", selectFigure))
