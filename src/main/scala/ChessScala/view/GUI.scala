@@ -13,10 +13,29 @@ import event.*
 class GUI(controller: Controller) extends Frame with Observer {
 
   controller.add(this)
-
-
-
   title = "Chess"
+
+  menuBar = new MenuBar {
+    contents += new Menu("File") {
+      mnemonic = Key.F
+      contents += new MenuItem(Action("New") {
+        controller.state = new MenuState
+        controller.computeInput("1")
+      })
+      contents += new MenuItem(Action("Quit") {
+        System.exit(0)
+      })
+    }
+    contents += new Menu("Edit") {
+      mnemonic = Key.E
+      contents += new MenuItem(Action("Undo") {
+        controller.computeInput("undo")
+      })
+      contents += new MenuItem(Action("Redo") {
+        controller.computeInput("redo")
+      })
+    }
+  }
 
   preferredSize = new Dimension(900, 900)
 
@@ -31,23 +50,16 @@ class GUI(controller: Controller) extends Frame with Observer {
     controller.computeInput("1")
   }
 
-  contents = new GridPanel(0, 1) {
+  contents = new MenuFrame(controller)
 
-    contents += new Label {
-      icon = new ImageIcon("images/logo.png")
-    }
-
-
-    contents += new BoxPanel(Orientation.Horizontal) {
-      contents += button
-    }
-  }
 
   peer.setLocationRelativeTo(null)
 
   peer.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
 
-  override def update(): Unit = if(controller.state.isInstanceOf[GameState]) contents = ChessBoardGUI(controller)
+  override def update(): Unit =
+    if(controller.state.isInstanceOf[GameState]) contents = ChessBoardGUI(controller)
+    else contents = new MenuFrame(controller)
 
   visible = true
 

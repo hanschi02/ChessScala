@@ -20,6 +20,7 @@ class ChessBoardGUI(controller : Controller)  extends FlowPanel {
   val dark = new Color(0xB58863)
   var buttonPressed : String = ""
 
+
   contents += new GridPanel(0 ,8) {
 
     preferredSize = new Dimension(800, 800)
@@ -62,8 +63,7 @@ class ChessBoardGUI(controller : Controller)  extends FlowPanel {
 
   }
 
-
-
   visible = true
+
 
 }
