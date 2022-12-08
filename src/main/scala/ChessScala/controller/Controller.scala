@@ -25,6 +25,7 @@ class Controller() extends Observable {
 
   def undo(): Unit =
     undoManager.undoStep
+    notifyObservers()
 
   def redo(): Unit =
     undoManager.redoStep

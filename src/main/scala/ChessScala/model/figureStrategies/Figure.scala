@@ -11,5 +11,6 @@ trait Figure(val team : Team) {
       getMotion(position, board).appendedAll(getAttacks(position, board))
       
   val get: Figure = this
+  val id : Int 
 
 }

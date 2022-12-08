@@ -13,9 +13,10 @@ class CheckHandler(team: Team) extends GameChain {
   override val next: GameChain = new MateHandler(team)
 
   override def handle(state: GameState): Option[ProgrammState] =
-    isCheck(state.team, state.board) match
-      case false => None
-      case true => next.handle(state)
+    //isCheck(state.team, state.board) match
+      //case false => None
+      //case true => next.handle(state)
+      return Some(state)
 
   def isCheck(team: Team, board: Board): Boolean = (new ConcreteCheckBridge).isCheck(team, board)
 
