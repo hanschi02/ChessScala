@@ -65,7 +65,7 @@ class SelectStateSpec extends AnyWordSpec with Matchers {
       val result = state.handle("king")
 
       result._1.isInstanceOf[GameState] should be(false)
-      result._2 should be("Non eligibale figure")
+      result._2 should be("Non eligible figure")
 
     }
 
