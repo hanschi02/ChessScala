@@ -6,6 +6,7 @@ import ChessScala.model.figureStrategies.figureBridge.{FigureBridge, MoveBridge}
 
 class Bishop(override val team: Team) extends Figure(team) {
 
+  override val id: Int = if(team == Black) 3 else 9
   private val bridge : FigureBridge = new MoveBridge
   val directions: Vector[Coordinate] = bridge.bishopDirections
 
