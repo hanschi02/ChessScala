@@ -1,10 +1,11 @@
 package ChessScala.model.gameState
+import ChessScala.model.gameState
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 
 class MenuStateSpec extends AnyWordSpec with Matchers {
 
-  val menuState : MenuState = new MenuState
+  val menuState : MenuState = gameState.newState().asInstanceOf[MenuState]
 
   "A MenuState " should {
 
