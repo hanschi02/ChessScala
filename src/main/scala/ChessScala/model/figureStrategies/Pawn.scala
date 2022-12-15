@@ -5,7 +5,7 @@ import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
 class Pawn(override val team: Team) extends Figure(team) {
 
   val direction: Int = if (team == White) 1 else -1
-
+  override val id: Int = if(team == Black) 6 else 12
   override def getAttacks(position: Coordinate, board: Board): Vector[Coordinate] =
     Vector(Coordinate(position.x + 1, position.y + direction), Coordinate(position.x - 1, position.y + direction))
       .filter(board.is_occupied)
@@ -21,4 +21,8 @@ class Pawn(override val team: Team) extends Figure(team) {
       .filter(k => (board.get(k).get.team != team) && (board.get(k).get.isInstanceOf[EnPassantPawn]))
       .map(k => Coordinate(k.x, k.y + direction))
 
+  override def move(start: Coordinate, target: Coordinate, board: Board): Board =
+    if (enPassant(start,board).contains(target))
+      board.delete(start).delete(Coordinate(target.x, target.y - direction)).insert(target,this.get)
+    else super.move(start, target, board)
 }

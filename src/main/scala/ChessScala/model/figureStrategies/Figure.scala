@@ -9,7 +9,11 @@ trait Figure(val team : Team) {
 
   def getMoves(position : Coordinate, board: Board): Vector[Coordinate] =
       getMotion(position, board).appendedAll(getAttacks(position, board))
-      
+
+  def move(start: Coordinate, target: Coordinate, board: Board) : Board =
+    board.delete(start).insert(target,this.get)
+
   val get: Figure = this
+  val id : Int 
 
 }

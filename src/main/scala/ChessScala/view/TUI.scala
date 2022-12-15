@@ -13,5 +13,6 @@ class TUI(controller: Controller) extends Observer {
     controller.printDescriptor()
     controller.computeInput(StdIn.readLine())
 
-  override def update(): Unit = println(controller.output)
+  override def update(): Unit =
+    println(controller.output)
 }

@@ -7,6 +7,8 @@ class Knight(override val team: Team) extends Figure(team) {
 
   private val directions = Vector((1,2),(1,-2),(-1,2),(-1,-2),(2,1),(-2,1),(2,-1),(-2,-1))
 
+  override val id: Int = if(team == Black) 2 else 8
+
   def getDirectionVector(position: Coordinate): Vector[Coordinate] =
     directions.map(k => Coordinate(position.x + k._1, position.y + k._2))
 

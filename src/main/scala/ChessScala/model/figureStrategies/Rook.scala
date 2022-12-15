@@ -4,6 +4,7 @@ import ChessScala.model.figureStrategies.figureBridge.{FigureBridge, MoveBridge}
 
 class Rook(override val team: Team) extends Figure(team) {
 
+  override val id: Int = if(team == Black) 1 else 7
   private val bridge : FigureBridge = new MoveBridge
   val directions: Vector[Coordinate] = bridge.rookDirections
 

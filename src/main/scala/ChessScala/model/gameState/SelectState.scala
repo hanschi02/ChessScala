@@ -6,7 +6,7 @@ import ChessScala.model.figureStrategies.{Team, White, Black}
 import ChessScala.model.interpreter.{Interpreter, SelectInterpreter}
 
 
-class SelectState(team: Team, coordinate: Coordinate, board: Board) extends ProgrammState {
+class SelectState(team: Team, coordinate: Coordinate, override val board: Board) extends ProgrammState {
 
   override val interpreter : Interpreter = new SelectInterpreter
   val factory : Factory = new FigureFactory(team)

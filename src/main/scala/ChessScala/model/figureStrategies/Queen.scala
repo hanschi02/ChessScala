@@ -4,6 +4,8 @@ import ChessScala.model.figureStrategies.figureBridge.{FigureBridge, MoveBridge}
 
 class Queen(override val team: Team) extends Figure(team) {
 
+  override val id: Int = if(team == Black) 4 else 10
+  
   private val bridge : FigureBridge = new MoveBridge
   val directions: Vector[Coordinate] = bridge.bishopDirections.appendedAll(bridge.rookDirections)
 
