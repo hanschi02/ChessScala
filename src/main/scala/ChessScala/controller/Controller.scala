@@ -8,6 +8,7 @@ class Controller() extends Observable {
   
   var output: String = "test"
   var state: ProgrammState = gameState.newState()
+  state = state.handle("1")._1
   private val undoManager = new UndoManager
 
   def computeInput(input: String): Unit =
