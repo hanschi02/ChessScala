@@ -1,6 +1,7 @@
 package ChessScala
 import ChessScala.controller.Controller
-import ChessScala.view.{ChessBoardGUI, GUI, TUI}
+import ChessScala.view.gui.{ChessBoardGUI, GUI}
+import ChessScala.view.TUI
 
 import scala.io.StdIn
 

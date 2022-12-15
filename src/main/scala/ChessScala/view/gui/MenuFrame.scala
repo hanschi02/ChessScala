@@ -1,13 +1,12 @@
-package ChessScala.view
+package ChessScala.view.gui
 
 import ChessScala.controller.Controller
 import ChessScala.model.board.Coordinate
 
 import java.awt.Dimension
-import swing.*
 import javax.swing.ImageIcon
+import scala.swing.*
 import scala.util.Try
-import swing.Image
 
 class MenuFrame(controller: Controller) extends FlowPanel {
 

@@ -40,6 +40,8 @@ class PawnSpec extends AnyWordSpec with Matchers {
       val moves: Vector[Coordinate] = pawn.getMoves(position, boardEnemy)
       moves should contain (Coordinate(1, 1))
       moves should contain noneOf(Coordinate(0, 0), Coordinate(0, 1))
+      val newBoard = pawn.move(position, Coordinate(0,1), boardEnemy)
+      newBoard.get(Coordinate(0, 1)).get should be (pawn)
     }
 
     "attack en passant" in {
@@ -47,6 +49,8 @@ class PawnSpec extends AnyWordSpec with Matchers {
       val boardEnemy: Board = board.insert(Coordinate(1, 0), enemy)
       val moves: Vector[Coordinate] = pawn.getMoves(position, boardEnemy)
       moves should contain (Coordinate(1, 1))
+      val newBoard : Board = pawn.move(position, Coordinate(1,1),boardEnemy)
+      newBoard.get(Coordinate(1,0)) should be (None)
     }
   }
 
@@ -90,6 +94,9 @@ class PawnSpec extends AnyWordSpec with Matchers {
       val boardEnemy: Board = board.insert(Coordinate(1, 7), enemy)
       val moves: Vector[Coordinate] = pawn.getMoves(position, boardEnemy)
       moves should contain (Coordinate(1, 6))
+      boardEnemy.get(Coordinate(1,7)).get.isInstanceOf[EnPassantPawn] should be (true)
+      val newBoard : Board = pawn.move(position, Coordinate(1,6),boardEnemy)
+      newBoard.get(Coordinate(1,7)) should be (None)
     }
   }
 }

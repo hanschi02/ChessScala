@@ -1,27 +1,27 @@
-package ChessScala.view
-
+package ChessScala.view.gui
 import java.awt.Image
+import swing.Image
 import java.awt.image.BufferedImage
-import java.io.File
 import javax.imageio.ImageIO
+import java.io.File
 
 object FigureImages {
 
-  val color = Array("white", "black")
-  val figure = Array("Queen", "Rook", "Bishop", "Pawn", "King", "Knight")
-  val figureImg = Array.ofDim[Image](2, 6)
+  val color: Array[String] = Array("white", "black")
+  val figure: Array[String] = Array("Queen", "Rook", "Bishop", "Pawn", "King", "Knight")
+  val figureImg: Array[Array[Image]] = Array.ofDim[Image](2, 6)
 
 
-  for(i <- 0 to 1) {
-    for(j <- 0 to 5) {
-      val bufferedImage: BufferedImage = ImageIO.read(new File("images/chessFigures/"+color(i)+figure(j)+".png"))
+  for (i <- 0 to 1) {
+    for (j <- 0 to 5) {
+      val bufferedImage: BufferedImage = ImageIO.read(new File("images/chessFigures/" + color(i) + figure(j) + ".png"))
       val img: Image = bufferedImage.getScaledInstance(100, 100, Image.SCALE_DEFAULT)
       figureImg(i)(j) = img
 
     }
   }
 
-  def getImage(id : Int) : Image =
+  def getImage(id: Int): Image =
     id match
       case 1 => figureImg(1)(1) // blackRook
       case 2 => figureImg(1)(5) // blackKnight
@@ -35,6 +35,6 @@ object FigureImages {
       case 10 => figureImg(0)(0) // whiteQueen
       case 11 => figureImg(0)(4) // whiteKing
       case 12 => figureImg(0)(3) // whitePawn
-    
+
 
 }

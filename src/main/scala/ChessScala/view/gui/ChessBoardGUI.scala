@@ -1,21 +1,20 @@
-package ChessScala.view
+package ChessScala.view.gui
 
 import ChessScala.controller.Controller
 import ChessScala.model.board.Coordinate
 
-import java.awt.Color
-import java.awt.Image
-import swing.{Color, SimpleSwingApplication, *}
+import java.awt.{Color, Image}
 import javax.swing.{ImageIcon, JLabel}
-import event.*
+import scala.swing.event.*
+import scala.swing.*
 import scala.util.Try
 
 
 class ChessBoardGUI(controller : Controller)  extends FlowPanel {
 
-  val figures = Array.ofDim[Image](2, 6)
+  val figures: Array[Array[Image]] = Array.ofDim[Image](2, 6)
 
-  val coordinates = Array.ofDim[Coordinate](8, 8)
+  val coordinates: Array[Array[Coordinate]] = Array.ofDim[Coordinate](8, 8)
   val light = new Color(0xF0D9B5)
   val dark = new Color(0xB58863)
   var buttonPressed : String = ""
@@ -29,6 +28,9 @@ class ChessBoardGUI(controller : Controller)  extends FlowPanel {
       for(j <- 1 to 8)
 
         val button = new Button() {
+
+          opaque = true
+          borderPainted = false
 
           if ((i+j) % 2 == 1) {
             background = light
@@ -53,6 +55,7 @@ class ChessBoardGUI(controller : Controller)  extends FlowPanel {
             } else {
               controller.computeInput(buttonPressed+input)
               buttonPressed = ""
+              println(controller.state.interpreter.descriptor)
             }
         }
 

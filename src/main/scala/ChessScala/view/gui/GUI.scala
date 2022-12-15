@@ -1,12 +1,12 @@
-package ChessScala.view
+package ChessScala.view.gui
+
 import ChessScala.controller.Controller
-import ChessScala.model.gameState._
+import ChessScala.model.gameState.*
 import ChessScala.util.Observer
 
-import javax.swing.ImageIcon
-import swing.*
-import javax.swing.WindowConstants
-import event.*
+import javax.swing.{ImageIcon, WindowConstants}
+import scala.swing.*
+import scala.swing.event.*
 
 
 
@@ -21,6 +21,7 @@ class GUI(controller: Controller) extends Frame with Observer {
       contents += new MenuItem(Action("New") {
         controller.state = new MenuState
         controller.computeInput("1")
+        println(controller.state.interpreter.descriptor)
       })
       contents += new MenuItem(Action("Quit") {
         System.exit(0)
