@@ -1,5 +1,6 @@
 package ChessScala.model.gameState
 import ChessScala.model.gameState
+import ChessScala.model.gameState.stateImplementation.{GameState, MenuState}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 

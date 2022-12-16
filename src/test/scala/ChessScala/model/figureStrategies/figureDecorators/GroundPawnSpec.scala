@@ -38,5 +38,20 @@ class GroundPawnSpec extends AnyWordSpec with Matchers{
       val newMoves: Vector[Coordinate] = pawn.getMoves(position, newBoard)
       newMoves.isEmpty should be (true)
     }
+
+    "do a move" in {
+      val builder = new BoardBuilder(8)
+      var board = builder.createEmptyBoard()
+      val pawn = new GroundPawn(White)
+      board.insert(Coordinate(0,0), pawn)
+      var newPawn = pawn.move(Coordinate(0,0), Coordinate(0,1), board).get(Coordinate(0,1)).get
+      newPawn.isInstanceOf[Pawn] should be (true)
+      newPawn.isInstanceOf[EnPassantPawn] should be (false)
+
+      newPawn = pawn.move(Coordinate(0, 0), Coordinate(0, 2), board).map(Coordinate(0, 2)).get
+      newPawn.isInstanceOf[EnPassantPawn] should be (true)
+
+
+    }
   }
 }

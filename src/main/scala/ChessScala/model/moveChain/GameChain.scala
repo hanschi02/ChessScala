@@ -1,7 +1,8 @@
 package ChessScala.model.moveChain
 
 import ChessScala.model.figureStrategies.Team
-import ChessScala.model.gameState.{GameState, ProgrammState}
+import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.gameState.stateImplementation.GameState
 
 import scala.math.Ordering
 import scala.util.Try

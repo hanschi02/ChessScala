@@ -2,6 +2,7 @@ package ChessScala.view.gui
 
 import ChessScala.controller.Controller
 import ChessScala.model.gameState.*
+import ChessScala.model.gameState.stateImplementation.{GameState, MenuState}
 import ChessScala.util.Observer
 
 import javax.swing.{ImageIcon, WindowConstants}
