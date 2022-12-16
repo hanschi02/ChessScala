@@ -1,7 +1,8 @@
-package ChessScala.model.gameState
+package ChessScala.model.gameState.stateImplementation
 
-import ChessScala.model.figureStrategies.Team
 import ChessScala.model.board.Board
+import ChessScala.model.figureStrategies.Team
+import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.interpreter.{GameInterpreter, Interpreter}
 import ChessScala.model.moveChain.{GameChain, MoveDecoder, MoveHandler}
 

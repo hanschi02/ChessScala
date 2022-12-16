@@ -1,7 +1,9 @@
-package ChessScala.model.gameState
+package ChessScala.model.gameState.stateImplementation
 
 import ChessScala.model.board.{Board, BoardBuilder}
 import ChessScala.model.figureStrategies.White
+import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.interpreter.{GameInterpreter, Interpreter, MenuInterpreter}
 
 class MenuState extends ProgrammState {
