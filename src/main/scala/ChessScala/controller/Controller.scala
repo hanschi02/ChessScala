@@ -1,13 +1,13 @@
 package ChessScala.controller
 import ChessScala.model.gameState._
-import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.gameState._
 import ChessScala.util.{Observable, UndoManager}
 import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
 
 class Controller() extends Observable {
   
   var output: String = "test"
-  var state: ProgrammState = gameState.newState()
+  var state: ProgrammState = newState()
   state = state.handle("1")._1
   private val undoManager = new UndoManager
 

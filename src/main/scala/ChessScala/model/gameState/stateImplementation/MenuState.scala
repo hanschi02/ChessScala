@@ -1,6 +1,7 @@
 package ChessScala.model.gameState.stateImplementation
 
 import ChessScala.model.board.{Board, BoardBuilder}
+import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.figureStrategies.{Team, White}
 import ChessScala.model.interpreter.{GameInterpreter, Interpreter, MenuInterpreter}
 
