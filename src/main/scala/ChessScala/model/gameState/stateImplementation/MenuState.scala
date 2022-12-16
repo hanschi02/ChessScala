@@ -1,14 +1,13 @@
 package ChessScala.model.gameState.stateImplementation
 
 import ChessScala.model.board.{Board, BoardBuilder}
-import ChessScala.model.figureStrategies.White
-import ChessScala.model.gameState.ProgrammState
-import ChessScala.model.gameState.stateImplementation.GameState
+import ChessScala.model.figureStrategies.{Team, White}
 import ChessScala.model.interpreter.{GameInterpreter, Interpreter, MenuInterpreter}
 
 class MenuState extends ProgrammState {
 
   override val interpreter : Interpreter = new MenuInterpreter
+  override val team: Team = White
   val builder : BoardBuilder = new BoardBuilder(8)
   override val board: Board = builder.createEmptyBoard()
 

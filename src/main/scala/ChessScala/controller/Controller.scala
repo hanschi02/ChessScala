@@ -7,7 +7,8 @@ import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
 class Controller() extends Observable {
   
   var output: String = "test"
-  var state: ProgrammState = newState()
+  var state: ProgrammState = gameState.newState()
+  state = state.handle("1")._1
   private val undoManager = new UndoManager
 
   def computeInput(input: String): Unit =

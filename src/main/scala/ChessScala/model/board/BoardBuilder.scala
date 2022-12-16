@@ -1,7 +1,8 @@
 package ChessScala.model.board
 
 import ChessScala.model.board
-import ChessScala.model.figureStrategies.{Queen, *}
+import ChessScala.model.figureStrategies._
+import ChessScala.model.figureStrategies.figureDecorators._
 
 class BoardBuilder(size : Int) {
   
@@ -13,28 +14,28 @@ class BoardBuilder(size : Int) {
   
   def createChessBoard() : Board =
     insertPawns(createEmptyBoard())
-      .insert(Coordinate(7,0), new Rook(Black))
-      .insert(Coordinate(7,1), new Knight(Black))
-      .insert(Coordinate(7,2), new Bishop(Black))
-      .insert(Coordinate(7,3), new Queen(Black))
-      .insert(Coordinate(7,4), BlackKing)
-      .insert(Coordinate(7,5), new Bishop(Black))
-      .insert(Coordinate(7,6), new Knight(Black))
+      .insert(Coordinate(0,7), new Rook(Black))
+      .insert(Coordinate(1,7), new Knight(Black))
+      .insert(Coordinate(2,7), new Bishop(Black))
+      .insert(Coordinate(3,7), new Queen(Black))
+      .insert(Coordinate(4,7), BlackKing)
+      .insert(Coordinate(5,7), new Bishop(Black))
+      .insert(Coordinate(6,7), new Knight(Black))
       .insert(Coordinate(7,7), new Rook(Black))
       .insert(Coordinate(0, 0), new Rook(White))
-      .insert(Coordinate(0, 1), new Knight(White))
-      .insert(Coordinate(0, 2), new Bishop(White))
-      .insert(Coordinate(0, 3), new Queen(White))
-      .insert(Coordinate(0, 4), WhiteKing)
-      .insert(Coordinate(0, 5), new Bishop(White))
-      .insert(Coordinate(0, 6), new Knight(White))
-      .insert(Coordinate(0, 7), new Rook(White))
+      .insert(Coordinate(1, 0), new Knight(White))
+      .insert(Coordinate(2, 0), new Bishop(White))
+      .insert(Coordinate(3, 0), new Queen(White))
+      .insert(Coordinate(4, 0), WhiteKing)
+      .insert(Coordinate(5, 0), new Bishop(White))
+      .insert(Coordinate(6, 0), new Knight(White))
+      .insert(Coordinate(7, 0), new Rook(White))
 
 
 
   def insertPawn(board : Board, team: Team, i : Int = 0) : Board =
     if(i > 7) board
-    else insertPawn(board.insert(Coordinate(if(team == White) 1 else 6, i), new Pawn(team)), team, i+1)
+    else insertPawn(board.insert(Coordinate(i, if(team == White) 1 else 6), new GroundPawn(team)), team, i+1)
 
 
   def insertPawns(board : Board) : Board =

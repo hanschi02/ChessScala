@@ -39,7 +39,7 @@ class ChessBoardGUI(controller : Controller)  extends FlowPanel {
           }
 
           Try{
-            val id = controller.state.board.get(Coordinate(8-i, j-1)).get.id
+            val id = controller.state.board.get(Coordinate(j-1, 8-i)).get.id
             icon = new ImageIcon(FigureImages.getImage(id))
           }
         }

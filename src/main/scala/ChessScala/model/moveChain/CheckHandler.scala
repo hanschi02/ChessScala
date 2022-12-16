@@ -6,18 +6,13 @@ import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.moveChain.checkBridge.ConcreteCheckBridge
 
-class CheckHandler(team: Team) extends GameChain {
-
-  val enemyTeam: Team = if (team == White) Black else White
-  val king: King = if (team == White) WhiteKing else BlackKing
-
-  override val next: GameChain = new MateHandler(team)
+class CheckHandler() extends GameChain {
+  override val next: GameChain = new SwitchHandler
 
   override def handle(state: GameState): Option[ProgrammState] =
-    //isCheck(state.team, state.board) match
-      //case false => None
-      //case true => next.handle(state)
-      return Some(state)
+    isCheck(state.team, state.board) match
+      case true => None
+      case false => next.handle(state)
 
   def isCheck(team: Team, board: Board): Boolean = (new ConcreteCheckBridge).isCheck(team, board)
 
