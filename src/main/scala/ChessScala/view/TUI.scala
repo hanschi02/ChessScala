@@ -2,10 +2,10 @@ package ChessScala.view
 
 import scala.io.StdIn
 import ChessScala.util.Observer
-import ChessScala.controller.Controller
+import ChessScala.controller.IController
 import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
 
-class TUI(controller: Controller) extends Observer {
+class TUI(controller: IController) extends Observer {
 
   controller.add(this)
 

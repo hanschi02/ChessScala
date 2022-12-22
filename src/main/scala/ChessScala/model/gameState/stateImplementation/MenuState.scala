@@ -5,8 +5,9 @@ import ChessScala.model.figureStrategies.White
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.interpreter.{GameInterpreter, Interpreter, MenuInterpreter}
+import com.google.inject.Inject
 
-class MenuState extends ProgrammState {
+class MenuState @Inject() extends ProgrammState {
 
   override val interpreter : Interpreter = new MenuInterpreter
   val builder : BoardBuilder = new BoardBuilder(8)

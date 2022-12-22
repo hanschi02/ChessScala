@@ -1,16 +1,20 @@
 package ChessScala
 
-import ChessScala.controller._
+import ChessScala.controller.*
+import ChessScala.model.gameState.stateImplementation.MenuState
+import ChessScala.model.gameState.ProgrammState
 import com.google.inject.AbstractModule
 import com.google.inject.name.Names
 import net.codingwell.scalaguice.ScalaModule
+import com.google.inject.TypeLiteral
 
 
-class ChessModule extends AbstractModule with ScalaModule {
+class ChessModule extends AbstractModule {
 
-  def configure() =
+  override def configure() =
     {
-      bind[IController].to[Controller]
+      bind[IController](new TypeLiteral[IController] {}).to(classOf[Controller])
+      bind[ProgrammState](new TypeLiteral[ProgrammState] {}).to(classOf[MenuState])
     }
 
 }

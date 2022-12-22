@@ -1,17 +1,21 @@
 package ChessScala.controller
+import ChessScala.ChessModule
 import ChessScala.model.gameState.*
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.util.{Observable, UndoManager}
 import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
 import com.google.inject.name.Names
-import com.google.inject.{Guice, Inject}
+import com.google.inject.{Guice, Inject, Injector}
 import net.codingwell.scalaguice.InjectorExtensions.*
 
 
-class Controller @Inject() extends Observable with IController {
+class Controller @Inject() extends IController {
   
   var output: String = ""
-  var state: ProgrammState = newState()
+
+  val injector: Injector = Guice.createInjector(new ChessModule)
+  var state: ProgrammState = injector.getInstance(classOf[ProgrammState])
+
   private val undoManager = new UndoManager
 
   override def computeInput(input: String): Unit =

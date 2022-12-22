@@ -1,6 +1,6 @@
 package ChessScala.view.gui
 
-import ChessScala.controller.Controller
+import ChessScala.controller.IController
 import ChessScala.model.gameState.*
 import ChessScala.model.gameState.stateImplementation.{GameState, MenuState}
 import ChessScala.util.Observer
@@ -11,7 +11,7 @@ import scala.swing.event.*
 
 
 
-class GUI(controller: Controller) extends Frame with Observer {
+class GUI(controller: IController) extends Frame with Observer {
 
   controller.add(this)
   title = "Chess"
