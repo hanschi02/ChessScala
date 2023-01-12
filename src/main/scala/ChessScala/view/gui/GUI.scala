@@ -27,6 +27,12 @@ class GUI(controller: IController) extends Frame with Observer {
       contents += new MenuItem(Action("Quit") {
         System.exit(0)
       })
+      contents += new MenuItem(Action("Save") {
+        controller.computeInput("save")
+      })
+      contents += new MenuItem(Action("Load") {
+        controller.computeInput("load")
+      })
     }
     contents += new Menu("Edit") {
       mnemonic = Key.E

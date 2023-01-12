@@ -8,7 +8,7 @@ import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.interpreter.{Interpreter, SelectInterpreter}
 
 
-class SelectState(team: Team, coordinate: Coordinate, override val board: Board) extends ProgrammState {
+class SelectState(val team: Team, coordinate: Coordinate, override val board: Board) extends ProgrammState {
 
   override val interpreter : Interpreter = new SelectInterpreter
   val factory : Factory = new FigureFactory(team)
