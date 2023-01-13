@@ -65,7 +65,6 @@ class FileIO extends FileIOInterface {
       val coordinate: Coordinate = Coordinate(x, y)
       val id : String = (field \\ "figure").text
 
-      println(id)
       val factory = new IdFactory
       val tryFigure : Try[Figure] = Try {
         factory.createFigure(id)
