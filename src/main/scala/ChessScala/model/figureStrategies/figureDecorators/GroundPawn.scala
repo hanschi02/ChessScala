@@ -14,4 +14,9 @@ class GroundPawn(team: Team) extends Pawn(team) {
   private def secondStep(board: Board, coordinate: Coordinate): Vector[Coordinate] =
     val step = Coordinate(coordinate.x,coordinate.y + direction * 2)
     if (board.is_free(step)) Vector(step) else Vector()
+
+  override def move(start: Coordinate, target: Coordinate, board: Board): Board =
+    if (secondStep(board, start).contains(target)) board.delete(start).insert(target,new EnPassantPawn(team))
+    else super.move(start, target, board)
+
 }
