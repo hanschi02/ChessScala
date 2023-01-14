@@ -6,6 +6,7 @@ import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
 import ChessScala.model.gameState._
 import ChessScala.model.gameState.stateImplementation._
 
+
 class ResetHandler extends GameChain {
 
   override val next: GameChain = this

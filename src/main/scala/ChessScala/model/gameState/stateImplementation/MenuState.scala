@@ -10,6 +10,7 @@ import com.google.inject.Inject
 class MenuState @Inject() extends ProgrammState {
 
   override val interpreter : Interpreter = new MenuInterpreter
+
   val builder : BoardBuilder = new BoardBuilder(8)
   override val board: Board = builder.createEmptyBoard()
 
@@ -18,6 +19,7 @@ class MenuState @Inject() extends ProgrammState {
     if (input == "load") {
       return (fileIO.load(), "Game loaded")
     }
+
     val (output, result) = interpreter.processInputLine(input)
 
     result match

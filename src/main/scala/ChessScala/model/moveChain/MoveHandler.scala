@@ -4,6 +4,7 @@ import ChessScala.model.figureStrategies.{Figure, Team, White}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
 
+
 import scala.util.{Failure, Success, Try}
 
 class MoveHandler(move: Move) extends GameChain {

@@ -10,6 +10,7 @@ import ChessScala.model.interpreter.{Interpreter, SelectInterpreter}
 
 class SelectState(val team: Team, coordinate: Coordinate, override val board: Board) extends ProgrammState {
 
+
   override val interpreter : Interpreter = new SelectInterpreter
   val factory : Factory = new FigureFactory(team)
   val nextTeam : Team = if (team == White) Black else White

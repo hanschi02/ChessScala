@@ -12,6 +12,7 @@ import scala.util.{Failure, Success, Try}
 
 class GameState(val team: Team, override val board: Board) extends ProgrammState {
 
+
   override val interpreter : Interpreter = new GameInterpreter
 
 
@@ -28,6 +29,5 @@ class GameState(val team: Team, override val board: Board) extends ProgrammState
     success match
     case Failure(_) => return (this, "Wrong move. Please try again.")
     case Success(value) => (value, result._1)
-
 
 }

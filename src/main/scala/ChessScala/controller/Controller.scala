@@ -1,6 +1,6 @@
 package ChessScala.controller
 import ChessScala.ChessModule
-import ChessScala.model.gameState.*
+import ChessScala.model.gameState._
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.util.{Observable, UndoManager}
 import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
