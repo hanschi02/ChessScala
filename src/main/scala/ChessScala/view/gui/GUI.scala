@@ -2,8 +2,9 @@ package ChessScala.view.gui
 
 import ChessScala.controller.IController
 import ChessScala.model.gameState.*
-import ChessScala.model.gameState.stateImplementation.{GameState, MenuState}
+import ChessScala.model.gameState.stateImplementation.{GameState, MenuState, SelectState}
 import ChessScala.util.Observer
+import ChessScala.model.figureStrategies.White
 
 import javax.swing.{ImageIcon, WindowConstants}
 import scala.swing.*
@@ -66,9 +67,16 @@ class GUI(controller: IController) extends Frame with Observer {
   peer.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
 
   override def update(): Unit =
-    if(controller.state.isInstanceOf[GameState]) contents = ChessBoardGUI(controller)
-    else contents = new MenuFrame(controller)
+    controller.state match {
+      case _: GameState => contents = ChessBoardGUI(controller)
+      case _: SelectState => selectTeam()
+      case _ => contents = new MenuFrame(controller)
+    }
 
+  def selectTeam():Unit =
+    val state = controller.state.asInstanceOf[SelectState]
+    if (state.team == White) contents = WhitePawnPromotionBoard(controller)
+    else contents = BlackPawnPromotionBoard(controller)
   visible = true
 
 

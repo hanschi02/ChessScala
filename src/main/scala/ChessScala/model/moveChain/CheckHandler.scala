@@ -6,8 +6,8 @@ import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.moveChain.checkBridge.ConcreteCheckBridge
 
-class CheckHandler() extends GameChain {
-  override val next: GameChain = new SwitchHandler
+class CheckHandler(coordinate: Coordinate) extends GameChain {
+  override val next: GameChain = new PromoteHandler(coordinate)
 
   override def handle(state: GameState): Option[ProgrammState] =
     isCheck(state.team, state.board) match

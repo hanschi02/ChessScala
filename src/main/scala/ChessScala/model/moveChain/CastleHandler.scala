@@ -8,7 +8,7 @@ import ChessScala.model.gameState.stateImplementation.GameState
 import com.google.inject.internal.InternalFlags.ColorizeOption
 
 class CastleHandler(move: Move) extends GameChain {
-  override val next: GameChain = new CheckHandler
+  override val next: GameChain = new CheckHandler(move.target)
 
   override def handle(state: GameState): Option[ProgrammState] =
     if (!state.board.get(move.target).get.isInstanceOf[King]) next.handle(state)

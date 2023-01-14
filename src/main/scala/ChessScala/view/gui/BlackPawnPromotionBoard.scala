@@ -8,7 +8,7 @@ import scala.swing.event.*
 import scala.swing.*
 import scala.util.Try
 
-object BlackPawnPromotionBoard extends SimpleSwingApplication {
+class BlackPawnPromotionBoard(controller: IController) extends FlowPanel {
 
   val light = new Color(0xF0D9B5)
   val dark = new Color(0xB58863)
@@ -45,6 +45,6 @@ object BlackPawnPromotionBoard extends SimpleSwingApplication {
 
   }
 
-  // visible = true
+   visible = true
 
 }
