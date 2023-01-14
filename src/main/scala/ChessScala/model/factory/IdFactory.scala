@@ -1,7 +1,7 @@
 package ChessScala.model.factory
 
 import ChessScala.model.figureStrategies.*
-import ChessScala.model.figureStrategies.figureDecorators.{EnPassantPawn, GroundPawn}
+import ChessScala.model.figureStrategies.figureDecorators.{CastleRook, EnPassantPawn, GroundPawn}
 
 class IdFactory extends Factory {
 
@@ -23,6 +23,8 @@ class IdFactory extends Factory {
       case 14 => new GroundPawn(White)
       case 15 => new EnPassantPawn(Black)
       case 16 => new EnPassantPawn(White)
+      case 17 => new CastleRook(Black)
+      case 18 => new CastleRook(White)
 
 
 }

@@ -39,6 +39,8 @@ object FigureImages {
       case 14 => figureImg(0)(3) // whiteGroundPawn
       case 15 => figureImg(1)(3) // blackEnPassantPawn
       case 16 => figureImg(0)(3) // whiteEnPassantPawn
+      case 17 => figureImg(1)(1) // blackRook
+      case 18 => figureImg(0)(1) // whiteRook
 
 
 }
