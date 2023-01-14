@@ -2,7 +2,8 @@ package ChessScala.model.moveChain
 
 import ChessScala.model.board.{Board, Coordinate}
 import ChessScala.model.figureStrategies.{BlackKing, Figure, Team, White, WhiteKing}
-import ChessScala.model.gameState.{GameState, ProgrammState}
+import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.moveChain.checkBridge.ConcreteCheckBridge
 
 class MateHandler(team: Team) extends GameChain {

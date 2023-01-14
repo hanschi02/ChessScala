@@ -2,7 +2,8 @@ package ChessScala.model.gameState
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import ChessScala.model.figureStrategies.{Black, Team, White}
-import ChessScala.model.board._
+import ChessScala.model.board.*
+import ChessScala.model.gameState.stateImplementation.{GameState, SelectState}
 import ChessScala.model.interpreter.{Interpreter, SelectInterpreter}
 
 class SelectStateSpec extends AnyWordSpec with Matchers {

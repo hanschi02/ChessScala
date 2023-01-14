@@ -1,6 +1,6 @@
 package ChessScala.view.gui
 
-import ChessScala.controller.Controller
+import ChessScala.controller.IController
 import ChessScala.model.board.Coordinate
 
 import java.awt.{Color, Image}
@@ -10,7 +10,7 @@ import scala.swing.*
 import scala.util.Try
 
 
-class ChessBoardGUI(controller : Controller)  extends FlowPanel {
+class ChessBoardGUI(controller : IController)  extends FlowPanel {
 
   val figures: Array[Array[Image]] = Array.ofDim[Image](2, 6)
 

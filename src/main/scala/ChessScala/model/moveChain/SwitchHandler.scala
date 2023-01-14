@@ -1,8 +1,12 @@
 package ChessScala.model.moveChain
 
 import ChessScala.model.figureStrategies.{Black, White}
-import ChessScala.model.gameState.{GameState, ProgrammState}
+import ChessScala.model.gameState._
+import ChessScala.model.gameState.stateImplementation._
+
 import ChessScala.model.moveChain.GameChain
+import ChessScala.model.gameState.stateImplementation._
+
 
 class SwitchHandler extends GameChain{
 

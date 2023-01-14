@@ -1,5 +1,8 @@
 package ChessScala.model.interpreter
 
+import jdk.javadoc.internal.doclets.toolkit.util.DocFinder.Input
+
+
 class GameInterpreter extends Interpreter {
 
   override val descriptor: String = "Please enter your Move"
@@ -7,6 +10,7 @@ class GameInterpreter extends Interpreter {
   val move:String = "[a-hA-H][1-8][a-hA-H][1-8]"
   val moveWithSpace: String = "[a-hA-H][1-8] [a-hA-H][1-8]"
   val wrongMove: String = ".*"
+
 
   def doMove(input: String): (String, Boolean) =
     (s"${input(0)}${input(1)} moved to ${input(2)}${input(3)}", true)

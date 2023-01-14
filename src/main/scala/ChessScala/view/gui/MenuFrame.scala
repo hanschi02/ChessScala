@@ -1,6 +1,6 @@
 package ChessScala.view.gui
 
-import ChessScala.controller.Controller
+import ChessScala.controller.IController
 import ChessScala.model.board.Coordinate
 
 import java.awt.Dimension
@@ -8,7 +8,7 @@ import javax.swing.ImageIcon
 import scala.swing.*
 import scala.util.Try
 
-class MenuFrame(controller: Controller) extends FlowPanel {
+class MenuFrame(controller: IController) extends FlowPanel {
 
 
   class White extends GridPanel(0,1) {
