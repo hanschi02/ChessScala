@@ -6,7 +6,7 @@ import ChessScala.model.gameState.stateImplementation.{GameState, SelectState}
 
 class PromoteHandler(target: Coordinate) extends GameChain {
 
-  override val next: GameChain = new SwitchHandler
+  override val next: GameChain = new MateHandler
 
   override def handle(state: GameState): Option[ProgrammState] =
     val end : Int = if (state.team == White) 7 else 0

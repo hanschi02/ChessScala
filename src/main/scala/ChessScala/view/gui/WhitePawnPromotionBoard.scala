@@ -8,7 +8,7 @@ import scala.swing.event.*
 import scala.swing.*
 import scala.util.Try
 
-class WhitePawnPromotionBoard(controller: IController) extends FlowPanel {
+class WhitePawnPromotionBoard(controller: IController, dialog: Dialog) extends FlowPanel {
 
   val light = new Color(0xF0D9B5)
   val dark = new Color(0xB58863)
@@ -45,6 +45,7 @@ class WhitePawnPromotionBoard(controller: IController) extends FlowPanel {
             case 3 => controller.computeInput("rook")
             case 4 => controller.computeInput("bishop")
           }
+          dialog.visible = false
       }
     }
   }
