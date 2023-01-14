@@ -1,15 +1,43 @@
-import ChessScala.model.board.BoardBuilder
-import ChessScala.model.figureStrategies.White
-import ChessScala.model.fileIO.fileIOJson.FileIO
-import ChessScala.model.gameState.stateImplementation.GameState
+import ChessScala.controller.IController
+import ChessScala.view.gui.FigureImages
 
-val boardBuilder = new BoardBuilder(8)
+import java.awt.{Color, Image}
+import javax.swing.{ImageIcon, JLabel}
+import scala.swing.event.*
+import scala.swing.*
+import scala.util.Try
 
-val board = boardBuilder.createChessBoard()
+class BlackPawnPromotionBoard(controller: IController) extends FlowPanel {
 
-val state = new GameState(White, board)
+  val light = new Color(0xF0D9B5)
+  val dark = new Color(0xB58863)
 
-val io = new FileIO
+  contents += new GridPanel(0, 4) {
 
-io.gameToJson(state)
+    preferredSize = new Dimension(400, 100)
 
+    for (i <- 1 to 4) {
+      val button = new Button() {
+        opaque = true
+        borderPainted = false
+
+        i match {
+          case 1 => icon = new ImageIcon(FigureImages.getImage(4))
+            background = dark
+          case 2 => icon = new ImageIcon(FigureImages.getImage(2))
+            background = light
+          case 3 => icon = new ImageIcon(FigureImages.getImage(1))
+            background = dark
+          case 4 => icon = new ImageIcon(FigureImages.getImage(3))
+            background = light
+
+        }
+      }
+      contents += button
+    }
+  }
+
+
+  visible = true
+
+}

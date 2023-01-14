@@ -13,7 +13,7 @@ class BlackPawnPromotionBoard(controller: IController) extends FlowPanel {
   val light = new Color(0xF0D9B5)
   val dark = new Color(0xB58863)
 
-  val grid = new GridPanel(0, 4) {
+  contents += new GridPanel(0, 4) {
 
     preferredSize = new Dimension(400, 100)
 
@@ -33,17 +33,24 @@ class BlackPawnPromotionBoard(controller: IController) extends FlowPanel {
             background = light
 
         }
+
       }
       contents += button
+
+      listenTo(button)
+      reactions += {
+        case ButtonClicked(`button`) =>
+          i match {
+            case 1 => controller.computeInput("queen")
+            case 2 => controller.computeInput("knight")
+            case 3 => controller.computeInput("rook")
+            case 4 => controller.computeInput("bishop")
+          }
+      }
+
     }
   }
 
-  def top = new MainFrame {
-
-    contents = grid
-    peer.setLocationRelativeTo(null)
-
-  }
 
    visible = true
 
