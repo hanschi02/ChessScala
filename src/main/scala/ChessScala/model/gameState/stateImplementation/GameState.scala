@@ -7,6 +7,8 @@ import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.interpreter.{GameInterpreter, Interpreter}
 import ChessScala.model.moveChain.{GameChain, MoveDecoder, MoveHandler}
 
+import scala.util.{Failure, Success, Try}
+
 
 class GameState(val team: Team, override val board: Board) extends ProgrammState {
 
@@ -14,14 +16,18 @@ class GameState(val team: Team, override val board: Board) extends ProgrammState
 
 
   override def handle(input: String): (ProgrammState, String) =
-    val result = interpreter.processInputLine(input)
     if (input == "save") {
       fileIO.save(this)
       return (this, "Game saved")
     } else if (input == "load") {
       return (fileIO.load(), "Game loaded")
     }
+    val result = interpreter.processInputLine(input)
     val chain : GameChain = new MoveHandler(MoveDecoder.decode(input))
-    (chain.handle(this).get, result._1)
+    val success = Try{chain.handle(this).get}
+    success match
+    case Failure(_) => return (this, "Wrong move. Please try again.")
+    case Success(value) => (value, result._1)
+
 
 }
