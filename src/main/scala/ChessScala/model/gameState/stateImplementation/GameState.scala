@@ -17,6 +17,7 @@ class GameState(val team: Team, override val board: Board) extends ProgrammState
 
 
   override def handle(input: String): (ProgrammState, String) =
+    if (input.length != 4) return (this, "Wrong move. Please try again.")
     if (input == "save") {
       fileIO.save(this)
       return (this, "Game saved")
