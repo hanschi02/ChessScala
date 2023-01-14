@@ -35,6 +35,10 @@ object FigureImages {
       case 10 => figureImg(0)(0) // whiteQueen
       case 11 => figureImg(0)(4) // whiteKing
       case 12 => figureImg(0)(3) // whitePawn
+      case 13 => figureImg(1)(3) // blackGroundPawn
+      case 14 => figureImg(0)(3) // whiteGroundPawn
+      case 15 => figureImg(1)(3) // blackEnPassantPawn
+      case 16 => figureImg(0)(3) // whiteEnPassantPawn
 
 
 }

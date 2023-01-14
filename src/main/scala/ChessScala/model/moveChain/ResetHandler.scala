@@ -3,7 +3,7 @@ package ChessScala.model.moveChain
 import ChessScala.model.board.Board
 import ChessScala.model.figureStrategies._
 import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
-import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.gameState._
 import ChessScala.model.gameState.stateImplementation._
 
 

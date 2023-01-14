@@ -1,13 +1,16 @@
 package ChessScala
-import ChessScala.controller.Controller
+import ChessScala.controller.IController
 import ChessScala.view.gui.{ChessBoardGUI, GUI}
 import ChessScala.view.TUI
+import com.google.inject.{Guice, Injector}
 
 import scala.io.StdIn
 
 object MainClass {
 
-  val controller = new Controller()
+  val injector: Injector = Guice.createInjector(new ChessModule)
+  val controller: IController = injector.getInstance(classOf[IController])
+
   val tui = new TUI(controller)
   val gui = new GUI(controller)
 

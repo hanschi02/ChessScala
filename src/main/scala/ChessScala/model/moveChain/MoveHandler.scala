@@ -1,8 +1,9 @@
 package ChessScala.model.moveChain
 import ChessScala.model.board.Board
-import ChessScala.model.figureStrategies.{Black, Figure, Team, White}
-import ChessScala.model.gameState._
-import ChessScala.model.gameState.stateImplementation._
+import ChessScala.model.figureStrategies.{Figure, Team, White}
+import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.gameState.stateImplementation.GameState
+
 
 import scala.util.{Failure, Success, Try}
 
@@ -19,7 +20,7 @@ class MoveHandler(move: Move) extends GameChain {
   def mover(move: Move, state: GameState): Option[Board] =
     //Some(board.insert(move.target, board.get(move.start)).delete(move.start))
     val success = Try[Figure] {state.board.get(move.start).get}
-     success match
+    success match
       case Failure(_) => None
       case Success(value) => {
         if (value.team != state.team) return None
