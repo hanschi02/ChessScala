@@ -1,7 +1,8 @@
 package ChessScala.controller
 import ChessScala.ChessModule
-import ChessScala.model.gameState._
+import ChessScala.model.gameState.*
 import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.util.{Observable, UndoManager}
 import ChessScala.model.interpreter.{Interpreter, MenuInterpreter}
 import com.google.inject.name.Names
@@ -29,7 +30,8 @@ class Controller @Inject() extends IController {
     notifyObservers()
 
   def doStep(input: String): Unit =
-    undoManager.doStep(new SetCommand(input, this))
+    if (state.isInstanceOf[GameState]) undoManager.doStep(new SetCommand(input, this))
+    else new SetCommand(input, this).doStep()
     notifyObservers()
 
   def undo(): Unit =

@@ -22,7 +22,7 @@ class GameState(val team: Team, override val board: Board) extends ProgrammState
       fileIO.save(this)
       return (this, "Game saved")
     } else if (input == "load") {
-      return (fileIO.load(), "Game loaded")
+      return (fileIO.load("Chess"), "Game loaded")
     }
     val result = interpreter.processInputLine(input)
     val chain : GameChain = new MoveHandler(MoveDecoder.decode(input))

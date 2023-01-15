@@ -1,12 +1,12 @@
 {
   "game" : {
     "state" : "GameState",
-    "team" : "Black",
+    "team" : "White",
     "board" : [ {
       "coordinate" : {
         "x" : 5,
         "y" : 3,
-        "figure" : "12"
+        "figure" : "9"
       }
     }, {
       "coordinate" : {
@@ -24,7 +24,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 7,
-        "figure" : "2"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -48,13 +48,13 @@
       "coordinate" : {
         "x" : 4,
         "y" : 1,
-        "figure" : "14"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 5,
         "y" : 2,
-        "figure" : "None"
+        "figure" : "8"
       }
     }, {
       "coordinate" : {
@@ -66,13 +66,13 @@
       "coordinate" : {
         "x" : 3,
         "y" : 1,
-        "figure" : "14"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 3,
         "y" : 5,
-        "figure" : "None"
+        "figure" : "6"
       }
     }, {
       "coordinate" : {
@@ -84,7 +84,7 @@
       "coordinate" : {
         "x" : 1,
         "y" : 0,
-        "figure" : "8"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -114,7 +114,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 0,
-        "figure" : "8"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -150,7 +150,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 1,
-        "figure" : "None"
+        "figure" : "14"
       }
     }, {
       "coordinate" : {
@@ -174,13 +174,13 @@
       "coordinate" : {
         "x" : 5,
         "y" : 5,
-        "figure" : "None"
+        "figure" : "2"
       }
     }, {
       "coordinate" : {
         "x" : 1,
         "y" : 7,
-        "figure" : "2"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -216,7 +216,7 @@
       "coordinate" : {
         "x" : 2,
         "y" : 5,
-        "figure" : "None"
+        "figure" : "2"
       }
     }, {
       "coordinate" : {
@@ -252,7 +252,7 @@
       "coordinate" : {
         "x" : 5,
         "y" : 4,
-        "figure" : "None"
+        "figure" : "3"
       }
     }, {
       "coordinate" : {
@@ -264,7 +264,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 3,
-        "figure" : "16"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -276,13 +276,13 @@
       "coordinate" : {
         "x" : 2,
         "y" : 0,
-        "figure" : "9"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 3,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -306,13 +306,13 @@
       "coordinate" : {
         "x" : 2,
         "y" : 7,
-        "figure" : "3"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 5,
         "y" : 1,
-        "figure" : "None"
+        "figure" : "14"
       }
     }, {
       "coordinate" : {
@@ -336,7 +336,7 @@
       "coordinate" : {
         "x" : 2,
         "y" : 2,
-        "figure" : "None"
+        "figure" : "8"
       }
     }, {
       "coordinate" : {
@@ -360,7 +360,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 2,
-        "figure" : "None"
+        "figure" : "12"
       }
     }, {
       "coordinate" : {
@@ -384,7 +384,7 @@
       "coordinate" : {
         "x" : 3,
         "y" : 2,
-        "figure" : "None"
+        "figure" : "12"
       }
     } ]
   }

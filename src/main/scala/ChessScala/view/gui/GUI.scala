@@ -17,6 +17,10 @@ class GUI(controller: IController) extends Frame with Observer {
   controller.add(this)
   title = "Chess"
 
+  val dialog : Dialog = new Dialog{
+    peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)
+  }
+
   menuBar = new MenuBar {
     contents += new Menu("File") {
       mnemonic = Key.F
@@ -68,7 +72,10 @@ class GUI(controller: IController) extends Frame with Observer {
 
   override def update(): Unit =
     controller.state match {
-      case _: GameState => contents = ChessBoardGUI(controller)
+      case _: GameState => {
+        contents = ChessBoardGUI(controller)
+        dialog.visible = false
+      }
 
       case value: MateState => {
         contents = ChessBoardGUI(controller)
@@ -85,9 +92,7 @@ class GUI(controller: IController) extends Frame with Observer {
   def selectTeam():Unit =
     contents = ChessBoardGUI(controller)
     val state = controller.state.asInstanceOf[SelectState]
-    val dialog : Dialog = new Dialog{
-      peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)
-    }
+
     if (state.team == White) dialog.contents = WhitePawnPromotionBoard(controller,dialog)
     else dialog.contents = BlackPawnPromotionBoard(controller,dialog)
     dialog.centerOnScreen()

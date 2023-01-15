@@ -12,13 +12,15 @@ class CastleHandler(move: Move) extends GameChain {
 
   override def handle(state: GameState): Option[ProgrammState] =
     if (!state.board.get(move.target).get.isInstanceOf[King]) next.handle(state)
-    else moveKing(state)
+    else moveKing(state) match
+      case Some(value) => next.handle(value.asInstanceOf[GameState])
+      case None => None
 
 
   def moveKing(state: GameState): Option[ProgrammState] =
     val king = if (state.team == White) WhiteKing else BlackKing
-    if (move.start != king.startField) return next.handle(resetRooks(state))
-    if (!king.castleFields.contains(move.target)) return next.handle(resetRooks(state))
+    if (move.start != king.startField) return Some(resetRooks(state))
+    if (!king.castleFields.contains(move.target)) return Some(resetRooks(state))
     castle(state)
 
 
@@ -27,13 +29,12 @@ class CastleHandler(move: Move) extends GameChain {
     new GameState(state.team, board)
 
   def reset(figure: Option[Figure]) : Option[Figure] =
-    if (figure.isEmpty) return None
     if (figure.get.isInstanceOf[CastleRook]) return Some(new Rook(figure.get.team))
     figure
 
   def castle(state: GameState): Option[ProgrammState] =
     val newState = if (state.team == White) whiteCastle(state) else blackCastle(state)
-    if (newState.isEmpty) None else next.handle(newState.get)
+    if (newState.isEmpty) None else Some(newState.get)
 
   def whiteCastle(state: GameState): Option[GameState] =
     println(move.target)
@@ -60,7 +61,6 @@ class CastleHandler(move: Move) extends GameChain {
 
 
   def smallBlackCastle(state: GameState): Option[GameState] =
-    if (move.start != BlackKing.startField) return None
     if (state.board.get(Coordinate(7,7)).isEmpty) return None
     if (!state.board.get(Coordinate(7,7)).get.isInstanceOf[CastleRook]) return None
     if (state.board.is_attacked(Coordinate(5,7), state.team)) return None
@@ -86,6 +86,7 @@ class CastleHandler(move: Move) extends GameChain {
 
 
   def bigBlackCastle(state: GameState): Option[GameState] =
+    println("NO ROOKS")
     if (state.board.get(Coordinate(0,7)).isEmpty) return None
     if (!state.board.get(Coordinate(0,7)).get.isInstanceOf[CastleRook]) return None
     if (state.board.is_attacked(Coordinate(2,7), state.team)) return None

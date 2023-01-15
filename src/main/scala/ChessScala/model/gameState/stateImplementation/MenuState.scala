@@ -17,7 +17,7 @@ class MenuState @Inject() extends ProgrammState {
   override def handle(input: String): (ProgrammState, String) =
 
     if (input == "load") {
-      return (fileIO.load(), "Game loaded")
+      return (fileIO.load("Chess"), "Game loaded")
     }
 
     val (output, result) = interpreter.processInputLine(input)

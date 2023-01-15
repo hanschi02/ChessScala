@@ -6,7 +6,7 @@ import ChessScala.model.figureStrategies.{Black, Team, White}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.interpreter.{Interpreter, SelectInterpreter}
-import ChessScala.model.moveChain.{CheckHandler, GameChain, SwitchHandler}
+import ChessScala.model.moveChain.{CheckHandler, GameChain, MateHandler, SwitchHandler}
 
 
 class SelectState(val team: Team, coordinate: Coordinate, override val board: Board) extends ProgrammState {
@@ -25,7 +25,7 @@ class SelectState(val team: Team, coordinate: Coordinate, override val board: Bo
 
         val figure = factory.createFigure(input)
         val newBoard : Board = board.insert(coordinate, figure)
-        val handler: GameChain = new SwitchHandler
+        val handler: GameChain = new MateHandler
         val state: ProgrammState = handler.handle(new GameState(team, newBoard)).get
         (state, output)
       }

@@ -13,7 +13,7 @@ import model.fileIO
 
 class ChessModule extends AbstractModule {
 
-  override def configure() = {
+  override def configure(): Unit = {
     bind[IController](new TypeLiteral[IController] {}).to(classOf[Controller])
     bind[ProgrammState](new TypeLiteral[ProgrammState] {}).to(classOf[MenuState])
     //bind[FileIOInterface](new TypeLiteral[FileIOInterface] {}).to(classOf[fileIO.fileIOXML.FileIO])

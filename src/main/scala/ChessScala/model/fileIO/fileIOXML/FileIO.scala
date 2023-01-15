@@ -49,11 +49,11 @@ class FileIO extends FileIOInterface {
 
   def teamToStringSS(state : SelectState) : String = if (state.team == White) "White" else "Black"
 
-  override def load(): ProgrammState = {
+  override def load(path: String): ProgrammState = {
 
     val builder = new BoardBuilder(8)
     var board : Board = builder.createEmptyBoard()
-    val file = scala.xml.XML.loadFile("Chess.xml")
+    val file = scala.xml.XML.loadFile(path + ".xml")
     val state : String = (file \\ "state").text
     val teamString : String = (file \\ "team").text
     val team: Team = if (teamString == "White") White else Black
