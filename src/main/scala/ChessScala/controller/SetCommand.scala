@@ -1,6 +1,7 @@
 package ChessScala.controller
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.util.Command
+import ChessScala.util.UndoManager
 
 class SetCommand(input: String, controller: Controller) extends Command {
 
@@ -8,6 +9,11 @@ class SetCommand(input: String, controller: Controller) extends Command {
 
   override def doStep(): Unit =
     val result = controller.state.handle(input)
+    if (result._1 == controller.state){
+      controller.undoManager.undoStep
+      controller.output = result._2
+      return
+    }
     controller.state = result._1
     controller.output = result._2
 

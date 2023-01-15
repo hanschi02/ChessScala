@@ -29,6 +29,9 @@ class GameState(val team: Team, override val board: Board) extends ProgrammState
     val success = Try{chain.handle(this).get}
     success match
     case Failure(_) => return (this, "Wrong move. Please try again.")
-    case Success(value) => (value, result._1)
-
+    case Success(value) => {
+      value match
+        case _: MateState => (value, value.asInstanceOf[MateState].result)
+        case _ => (value, result._1)
+    }
 }
