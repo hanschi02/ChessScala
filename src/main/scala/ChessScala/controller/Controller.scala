@@ -16,7 +16,7 @@ class Controller @Inject() extends IController {
   val injector: Injector = Guice.createInjector(new ChessModule)
   var state: ProgrammState = injector.getInstance(classOf[ProgrammState])
 
-  private val undoManager = new UndoManager
+  val undoManager = new UndoManager
 
   override def computeInput(input: String): Unit =
     input match

@@ -71,6 +71,7 @@ class GUI(controller: IController) extends Frame with Observer {
       case _: GameState => contents = ChessBoardGUI(controller)
 
       case value: MateState => {
+        contents = ChessBoardGUI(controller)
         val message = value.result
         val jOptionPane = new JOptionPane(message, JOptionPane.PLAIN_MESSAGE)
         val jDialog = jOptionPane.createDialog("Mate")
@@ -82,8 +83,11 @@ class GUI(controller: IController) extends Frame with Observer {
     }
 
   def selectTeam():Unit =
+    contents = ChessBoardGUI(controller)
     val state = controller.state.asInstanceOf[SelectState]
-    val dialog : Dialog = new Dialog()
+    val dialog : Dialog = new Dialog{
+      peer.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE)
+    }
     if (state.team == White) dialog.contents = WhitePawnPromotionBoard(controller,dialog)
     else dialog.contents = BlackPawnPromotionBoard(controller,dialog)
     dialog.centerOnScreen()
