@@ -14,22 +14,22 @@ class BoardBuilder(size : Int) {
   
   def createChessBoard() : Board =
     insertPawns(createEmptyBoard())
-      .insert(Coordinate(0,7), new Rook(Black))
+      .insert(Coordinate(0,7), new CastleRook(Black))
       .insert(Coordinate(1,7), new Knight(Black))
       .insert(Coordinate(2,7), new Bishop(Black))
       .insert(Coordinate(3,7), new Queen(Black))
       .insert(Coordinate(4,7), BlackKing)
       .insert(Coordinate(5,7), new Bishop(Black))
       .insert(Coordinate(6,7), new Knight(Black))
-      .insert(Coordinate(7,7), new Rook(Black))
-      .insert(Coordinate(0, 0), new Rook(White))
+      .insert(Coordinate(7,7), new CastleRook(Black))
+      .insert(Coordinate(0, 0), new CastleRook(White))
       .insert(Coordinate(1, 0), new Knight(White))
       .insert(Coordinate(2, 0), new Bishop(White))
       .insert(Coordinate(3, 0), new Queen(White))
       .insert(Coordinate(4, 0), WhiteKing)
       .insert(Coordinate(5, 0), new Bishop(White))
       .insert(Coordinate(6, 0), new Knight(White))
-      .insert(Coordinate(7, 0), new Rook(White))
+      .insert(Coordinate(7, 0), new CastleRook(White))
 
 
 

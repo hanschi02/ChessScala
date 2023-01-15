@@ -1,45 +1,45 @@
 {
   "game" : {
     "state" : "GameState",
-    "team" : "Black",
+    "team" : "White",
     "board" : [ {
       "coordinate" : {
         "x" : 5,
         "y" : 3,
-        "figure" : "None"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 0,
-        "y" : 5,
-        "figure" : "None"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 4,
-        "y" : 7,
-        "figure" : "5"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 6,
-        "y" : 7,
-        "figure" : "2"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 3,
-        "y" : 7,
-        "figure" : "4"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 4,
-        "y" : 0,
         "figure" : "11"
       }
     }, {
       "coordinate" : {
+        "x" : 0,
+        "y" : 5,
+        "figure" : "None"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 4,
+        "y" : 7,
+        "figure" : "None"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 6,
+        "y" : 7,
+        "figure" : "None"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 3,
+        "y" : 7,
+        "figure" : "None"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 4,
+        "y" : 0,
+        "figure" : "None"
+      }
+    }, {
+      "coordinate" : {
         "x" : 1,
         "y" : 4,
         "figure" : "None"
@@ -48,7 +48,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 1,
-        "figure" : "None"
+        "figure" : "14"
       }
     }, {
       "coordinate" : {
@@ -60,13 +60,13 @@
       "coordinate" : {
         "x" : 7,
         "y" : 3,
-        "figure" : "None"
+        "figure" : "5"
       }
     }, {
       "coordinate" : {
         "x" : 3,
         "y" : 1,
-        "figure" : "14"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -90,7 +90,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 3,
-        "figure" : "16"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -120,13 +120,13 @@
       "coordinate" : {
         "x" : 5,
         "y" : 7,
-        "figure" : "3"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 0,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -156,7 +156,7 @@
       "coordinate" : {
         "x" : 2,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -180,19 +180,19 @@
       "coordinate" : {
         "x" : 1,
         "y" : 7,
-        "figure" : "2"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 6,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 7,
         "y" : 7,
-        "figure" : "1"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -216,13 +216,13 @@
       "coordinate" : {
         "x" : 2,
         "y" : 5,
-        "figure" : "None"
+        "figure" : "12"
       }
     }, {
       "coordinate" : {
         "x" : 7,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -234,7 +234,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -246,7 +246,7 @@
       "coordinate" : {
         "x" : 1,
         "y" : 1,
-        "figure" : "14"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -270,7 +270,7 @@
       "coordinate" : {
         "x" : 0,
         "y" : 7,
-        "figure" : "1"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -282,49 +282,49 @@
       "coordinate" : {
         "x" : 3,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 1,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 3,
         "y" : 0,
+        "figure" : "None"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 0,
+        "y" : 1,
+        "figure" : "14"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 2,
+        "y" : 7,
+        "figure" : "None"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 5,
+        "y" : 1,
+        "figure" : "14"
+      }
+    }, {
+      "coordinate" : {
+        "x" : 2,
+        "y" : 4,
         "figure" : "10"
       }
     }, {
       "coordinate" : {
-        "x" : 0,
-        "y" : 1,
-        "figure" : "14"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 2,
-        "y" : 7,
-        "figure" : "3"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 5,
-        "y" : 1,
-        "figure" : "14"
-      }
-    }, {
-      "coordinate" : {
-        "x" : 2,
-        "y" : 4,
-        "figure" : "None"
-      }
-    }, {
-      "coordinate" : {
         "x" : 5,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {

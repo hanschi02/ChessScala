@@ -8,17 +8,16 @@ import ChessScala.model.gameState.stateImplementation.GameState
 import scala.util.{Failure, Success, Try}
 
 class MoveHandler(move: Move) extends GameChain {
-  override val next: GameChain = new CheckHandler()
+  override val next: GameChain = new CastleHandler(move)
 
   override def handle(state: GameState): Option[ProgrammState] =
-    val result = Try[Board]{mover(move, state).get}
+    val result = Try[Board]{mover(state).get}
     result match
       case Failure(_) => None
       case Success(value : Board) => next.handle((new GameState(state.team, value)))
 
 
-  def mover(move: Move, state: GameState): Option[Board] =
-    //Some(board.insert(move.target, board.get(move.start)).delete(move.start))
+  def mover(state: GameState): Option[Board] =
     val success = Try[Figure] {state.board.get(move.start).get}
     success match
       case Failure(_) => None
