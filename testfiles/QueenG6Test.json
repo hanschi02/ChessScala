@@ -24,13 +24,13 @@
       "coordinate" : {
         "x" : 6,
         "y" : 7,
-        "figure" : "2"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
         "x" : 3,
         "y" : 7,
-        "figure" : "4"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -78,7 +78,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 2,
-        "figure" : "None"
+        "figure" : "4"
       }
     }, {
       "coordinate" : {
@@ -150,7 +150,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 1,
-        "figure" : "14"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -186,7 +186,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 6,
-        "figure" : "13"
+        "figure" : "10"
       }
     }, {
       "coordinate" : {
@@ -294,7 +294,7 @@
       "coordinate" : {
         "x" : 3,
         "y" : 0,
-        "figure" : "10"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -330,7 +330,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 4,
-        "figure" : "15"
+        "figure" : "6"
       }
     }, {
       "coordinate" : {

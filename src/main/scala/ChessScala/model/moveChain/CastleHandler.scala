@@ -86,7 +86,6 @@ class CastleHandler(move: Move) extends GameChain {
 
 
   def bigBlackCastle(state: GameState): Option[GameState] =
-    println("NO ROOKS")
     if (state.board.get(Coordinate(0,7)).isEmpty) return None
     if (!state.board.get(Coordinate(0,7)).get.isInstanceOf[CastleRook]) return None
     if (state.board.is_attacked(Coordinate(2,7), state.team)) return None

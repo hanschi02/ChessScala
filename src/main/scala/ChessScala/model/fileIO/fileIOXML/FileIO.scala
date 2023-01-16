@@ -39,15 +39,12 @@ class FileIO extends FileIOInterface {
 
   def gameToXML(state : ProgrammState) : Elem =
     <game>
-      <state>{if (state.isInstanceOf[GameState]) "GameState" else "SelectState"}</state>
-      <team>{if (state.isInstanceOf[GameState]) teamToStringGS(state.asInstanceOf[GameState])
-                else teamToStringSS(state.asInstanceOf[SelectState])  }</team>
+      <state>{"GameState"}</state>
+      <team>{teamToStringGS(state.asInstanceOf[GameState])}</team>
       {boardToXML(state.board)}
     </game>
 
   def teamToStringGS(state : GameState) : String = if (state.team == White) "White" else "Black"
-
-  def teamToStringSS(state : SelectState) : String = if (state.team == White) "White" else "Black"
 
   override def load(path: String): ProgrammState = {
 

@@ -11,7 +11,6 @@ class MoveHandler(move: Move) extends GameChain {
   override val next: GameChain = new CastleHandler(move)
 
   override def handle(state: GameState): Option[ProgrammState] =
-    println("HALOOOO")
     val result = Try[Board]{mover(state).get}
     result match
       case Failure(_) => None

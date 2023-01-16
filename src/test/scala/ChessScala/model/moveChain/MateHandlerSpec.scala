@@ -24,8 +24,17 @@ class MateHandlerSpec extends AnyWordSpec with Matchers{
       endState.isDefined should be (true)
       endState.get.isInstanceOf[MateState] should be (true)
       endState.get.asInstanceOf[MateState].result should be ("Checkmate, Black wins!")
-
-
     }
+
+    "finish the game when it is stalemate" in {
+      val state: GameState = fileIO.load("testfiles/e7c7StalemateTest").asInstanceOf[GameState]
+      val whiteQueenMove: Move = new Move(Coordinate(4,6), Coordinate(2,6))
+      val handler: MoveHandler = new MoveHandler(whiteQueenMove)
+      val endState: Option[ProgrammState] = handler.handle(state)
+      endState.isDefined should be (true)
+      endState.get.isInstanceOf[MateState] should be (true)
+      endState.get.asInstanceOf[MateState].result should be ("Stalemate, draw!")
+    }
+
   }
 }
