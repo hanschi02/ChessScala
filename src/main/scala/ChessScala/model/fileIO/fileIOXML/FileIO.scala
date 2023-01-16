@@ -39,21 +39,18 @@ class FileIO extends FileIOInterface {
 
   def gameToXML(state : ProgrammState) : Elem =
     <game>
-      <state>{if (state.isInstanceOf[GameState]) "GameState" else "SelectState"}</state>
-      <team>{if (state.isInstanceOf[GameState]) teamToStringGS(state.asInstanceOf[GameState])
-                else teamToStringSS(state.asInstanceOf[SelectState])  }</team>
+      <state>{"GameState"}</state>
+      <team>{teamToStringGS(state.asInstanceOf[GameState])}</team>
       {boardToXML(state.board)}
     </game>
 
   def teamToStringGS(state : GameState) : String = if (state.team == White) "White" else "Black"
 
-  def teamToStringSS(state : SelectState) : String = if (state.team == White) "White" else "Black"
-
-  override def load(): ProgrammState = {
+  override def load(path: String): ProgrammState = {
 
     val builder = new BoardBuilder(8)
     var board : Board = builder.createEmptyBoard()
-    val file = scala.xml.XML.loadFile("Chess.xml")
+    val file = scala.xml.XML.loadFile(path + ".xml")
     val state : String = (file \\ "state").text
     val teamString : String = (file \\ "team").text
     val team: Team = if (teamString == "White") White else Black

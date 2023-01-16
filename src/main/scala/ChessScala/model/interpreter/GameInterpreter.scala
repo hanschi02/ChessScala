@@ -12,6 +12,7 @@ class GameInterpreter extends Interpreter {
   val wrongMove: String = ".*"
 
 
+
   def doMove(input: String): (String, Boolean) =
     (s"${input(0)}${input(1)} moved to ${input(2)}${input(3)}", true)
 

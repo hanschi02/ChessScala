@@ -1,12 +1,12 @@
 {
   "game" : {
     "state" : "GameState",
-    "team" : "White",
+    "team" : "Black",
     "board" : [ {
       "coordinate" : {
         "x" : 5,
         "y" : 3,
-        "figure" : "None"
+        "figure" : "12"
       }
     }, {
       "coordinate" : {
@@ -48,7 +48,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 1,
-        "figure" : "None"
+        "figure" : "14"
       }
     }, {
       "coordinate" : {
@@ -90,7 +90,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 3,
-        "figure" : "12"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -150,7 +150,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 1,
-        "figure" : "14"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -264,7 +264,7 @@
       "coordinate" : {
         "x" : 6,
         "y" : 3,
-        "figure" : "None"
+        "figure" : "16"
       }
     }, {
       "coordinate" : {
@@ -312,7 +312,7 @@
       "coordinate" : {
         "x" : 5,
         "y" : 1,
-        "figure" : "14"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -330,7 +330,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 4,
-        "figure" : "15"
+        "figure" : "None"
       }
     }, {
       "coordinate" : {
@@ -378,7 +378,7 @@
       "coordinate" : {
         "x" : 4,
         "y" : 5,
-        "figure" : "None"
+        "figure" : "6"
       }
     }, {
       "coordinate" : {

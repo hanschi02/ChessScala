@@ -12,7 +12,6 @@ class ResetHandler extends GameChain {
   override val next: GameChain = this
 
   def reset(figure: Option[Figure]) : Option[Figure] =
-    if (figure.isEmpty) return None
     if (figure.get.isInstanceOf[EnPassantPawn]) return Some(new Pawn(figure.get.team))
     figure
 
