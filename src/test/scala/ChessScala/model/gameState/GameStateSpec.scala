@@ -3,8 +3,9 @@ import ChessScala.model.board.*
 import ChessScala.model.figureStrategies.{Team, White}
 import ChessScala.model.figureStrategies.strategyImplementations.Pawn
 import ChessScala.model.gameState.stateImplementation.{GameState, MateState}
-import ChessScala.model.moveChain.{Move, MoveHandler}
 import ChessScala.model.fileIO.fileIOJson.FileIO
+import ChessScala.model.moveChain.ChainImplementations.MoveHandler
+import ChessScala.model.moveChain.Move
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 

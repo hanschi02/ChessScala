@@ -1,4 +1,4 @@
-# ChessScala.model.figureStrategies
+# figureStrategies
 
 This package contains the classes that define the behavior of the chess pieces on the board. The package contains the following trait:
 

@@ -1,4 +1,4 @@
-# ProgramState trait
+# ProgramState
 The `ProgramState` trait defines the state of the program and the behavior of the program at a certain point in time.
 
 ## Properties

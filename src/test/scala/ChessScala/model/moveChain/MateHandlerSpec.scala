@@ -7,6 +7,7 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import ChessScala.model.fileIO.fileIOJson.FileIO
 import ChessScala.model.gameState.ProgrammState
+import ChessScala.model.moveChain.ChainImplementations.{MoveHandler, SwitchHandler}
 
 import scala.reflect.internal.util.Position
 

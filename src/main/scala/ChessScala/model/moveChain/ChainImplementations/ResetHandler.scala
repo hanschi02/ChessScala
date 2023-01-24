@@ -1,4 +1,4 @@
-package ChessScala.model.moveChain
+package ChessScala.model.moveChain.ChainImplementations
 
 import ChessScala.model.board.Board
 import ChessScala.model.figureStrategies.*
@@ -6,6 +6,7 @@ import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
 import ChessScala.model.figureStrategies.strategyImplementations.Pawn
 import ChessScala.model.gameState.*
 import ChessScala.model.gameState.stateImplementation.*
+import ChessScala.model.moveChain.GameChain
 
 
 class ResetHandler extends GameChain {

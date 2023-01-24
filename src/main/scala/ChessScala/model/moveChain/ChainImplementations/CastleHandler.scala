@@ -1,11 +1,13 @@
-package ChessScala.model.moveChain
+package ChessScala.model.moveChain.ChainImplementations
 
 import ChessScala.model.board.{Board, Coordinate}
-import ChessScala.model.figureStrategies.{Figure, White}
 import ChessScala.model.figureStrategies.figureDecorators.{CastleRook, EnPassantPawn}
-import ChessScala.model.figureStrategies.strategyImplementations.{BlackKing, King, Pawn, Rook, WhiteKing}
+import ChessScala.model.figureStrategies.strategyImplementations.*
+import ChessScala.model.figureStrategies.{Figure, White}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
+import ChessScala.model.moveChain.{GameChain, Move}
+import ChessScala.model.moveChain.ChainImplementations.CheckHandler
 import com.google.inject.internal.InternalFlags.ColorizeOption
 
 class CastleHandler(move: Move) extends GameChain {

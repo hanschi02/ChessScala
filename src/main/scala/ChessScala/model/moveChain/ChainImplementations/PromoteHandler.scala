@@ -1,9 +1,11 @@
-package ChessScala.model.moveChain
-import ChessScala.model.gameState.ProgrammState
+package ChessScala.model.moveChain.ChainImplementations
+
 import ChessScala.model.board.Coordinate
 import ChessScala.model.figureStrategies.White
 import ChessScala.model.figureStrategies.strategyImplementations.Pawn
+import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.{GameState, SelectState}
+import ChessScala.model.moveChain.GameChain
 
 class PromoteHandler(target: Coordinate) extends GameChain {
 

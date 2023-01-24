@@ -6,7 +6,8 @@ import ChessScala.model.fileIO.fileIOJson.FileIO
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.interpreter.Interpreter
 import ChessScala.model.interpreter.interpreterImplementations.GameInterpreter
-import ChessScala.model.moveChain.{GameChain, MoveDecoder, MoveHandler}
+import ChessScala.model.moveChain.ChainImplementations.MoveHandler
+import ChessScala.model.moveChain.{GameChain, MoveDecoder}
 
 import scala.util.{Failure, Success, Try}
 

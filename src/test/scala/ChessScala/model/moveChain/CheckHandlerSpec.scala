@@ -4,6 +4,7 @@ import ChessScala.model.board.Coordinate
 import ChessScala.model.fileIO.FileIOInterface
 import ChessScala.model.fileIO.fileIOJson.FileIO
 import ChessScala.model.gameState.stateImplementation.GameState
+import ChessScala.model.moveChain.ChainImplementations.MoveHandler
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 

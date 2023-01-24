@@ -3,6 +3,7 @@ package ChessScala.model.moveChain
 import ChessScala.model.fileIO.FileIOInterface
 import ChessScala.model.fileIO.fileIOJson.FileIO
 import ChessScala.model.gameState.stateImplementation.{GameState, SelectState}
+import ChessScala.model.moveChain.ChainImplementations.SwitchHandler
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 

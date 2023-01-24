@@ -7,6 +7,7 @@ import org.scalatest.wordspec.AnyWordSpec
 import ChessScala.model.fileIO.fileIOJson.FileIO
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
+import ChessScala.model.moveChain.ChainImplementations.{MoveHandler, SwitchHandler}
 
 class CastleHandlerSpec extends AnyWordSpec with Matchers {
 

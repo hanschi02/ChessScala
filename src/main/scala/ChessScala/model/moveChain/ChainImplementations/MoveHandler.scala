@@ -1,9 +1,10 @@
-package ChessScala.model.moveChain
+package ChessScala.model.moveChain.ChainImplementations
+
 import ChessScala.model.board.Board
 import ChessScala.model.figureStrategies.{Figure, Team, White}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
-
+import ChessScala.model.moveChain.{GameChain, Move}
 
 import scala.util.{Failure, Success, Try}
 

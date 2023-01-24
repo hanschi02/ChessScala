@@ -8,7 +8,8 @@ import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
 import ChessScala.model.interpreter.Interpreter
 import ChessScala.model.interpreter.interpreterImplementations.SelectInterpreter
-import ChessScala.model.moveChain.{CheckHandler, GameChain, MateHandler, SwitchHandler}
+import ChessScala.model.moveChain.ChainImplementations.{CheckHandler, MateHandler, SwitchHandler}
+import ChessScala.model.moveChain.GameChain
 
 
 class SelectState(val team: Team, coordinate: Coordinate, override val board: Board) extends ProgrammState {
