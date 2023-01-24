@@ -1,8 +1,9 @@
 package ChessScala.model.figureStrategies.figureDecorators
+
 import ChessScala.model.figureStrategies.White
+import ChessScala.model.figureStrategies.strategyImplementations.Rook
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
-import ChessScala.model.figureStrategies.Rook
 
 class CastleRookSpec extends AnyWordSpec with Matchers {
   "A castle-rook" should {

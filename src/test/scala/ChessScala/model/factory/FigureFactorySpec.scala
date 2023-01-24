@@ -1,5 +1,7 @@
 package ChessScala.model.factory
-import ChessScala.model.figureStrategies._
+import ChessScala.model.factory.factoryImplementation.FigureFactory
+import ChessScala.model.figureStrategies.*
+import ChessScala.model.figureStrategies.strategyImplementations.{Bishop, Knight, Queen, Rook}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 

@@ -4,7 +4,8 @@ import ChessScala.model.board.Board
 import ChessScala.model.figureStrategies.Team
 import ChessScala.model.fileIO.fileIOJson.FileIO
 import ChessScala.model.gameState.ProgrammState
-import ChessScala.model.interpreter.{GameInterpreter, Interpreter}
+import ChessScala.model.interpreter.Interpreter
+import ChessScala.model.interpreter.interpreterImplementations.GameInterpreter
 import ChessScala.model.moveChain.{GameChain, MoveDecoder, MoveHandler}
 
 import scala.util.{Failure, Success, Try}

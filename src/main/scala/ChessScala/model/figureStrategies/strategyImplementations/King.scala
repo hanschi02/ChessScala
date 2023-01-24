@@ -1,6 +1,8 @@
-package ChessScala.model.figureStrategies
+package ChessScala.model.figureStrategies.strategyImplementations
+
 import ChessScala.model.board.{Board, Coordinate}
 import ChessScala.model.figureStrategies.figureDecorators.CastleRook
+import ChessScala.model.figureStrategies.*
 
 trait King(team: Team) {
   val y: Int = if (team == White) 0 else 7

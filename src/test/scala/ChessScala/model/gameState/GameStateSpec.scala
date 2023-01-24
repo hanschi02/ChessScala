@@ -1,6 +1,7 @@
 package ChessScala.model.gameState
 import ChessScala.model.board.*
-import ChessScala.model.figureStrategies.{Pawn, Team, White}
+import ChessScala.model.figureStrategies.{Team, White}
+import ChessScala.model.figureStrategies.strategyImplementations.Pawn
 import ChessScala.model.gameState.stateImplementation.{GameState, MateState}
 import ChessScala.model.moveChain.{Move, MoveHandler}
 import ChessScala.model.fileIO.fileIOJson.FileIO

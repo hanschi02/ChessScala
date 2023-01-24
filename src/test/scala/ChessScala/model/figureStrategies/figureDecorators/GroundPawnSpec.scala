@@ -1,7 +1,8 @@
 package ChessScala.model.figureStrategies.figureDecorators
 import ChessScala.model.board.{Board, BoardBuilder, Coordinate}
-import ChessScala.model.figureStrategies.{Black, Pawn, White}
+import ChessScala.model.figureStrategies.{Black, White}
 import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
+import ChessScala.model.figureStrategies.strategyImplementations.Pawn
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers
 

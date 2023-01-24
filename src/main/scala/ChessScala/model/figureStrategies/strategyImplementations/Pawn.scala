@@ -1,6 +1,8 @@
-package ChessScala.model.figureStrategies
+package ChessScala.model.figureStrategies.strategyImplementations
+
 import ChessScala.model.board.{Board, Coordinate}
 import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
+import ChessScala.model.figureStrategies.{Black, Figure, Team, White}
 
 class Pawn(override val team: Team) extends Figure(team) {
 

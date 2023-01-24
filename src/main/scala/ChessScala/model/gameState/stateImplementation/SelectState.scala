@@ -2,10 +2,12 @@ package ChessScala.model.gameState.stateImplementation
 
 import ChessScala.model.board.*
 import ChessScala.model.factory.*
+import ChessScala.model.factory.factoryImplementation.FigureFactory
 import ChessScala.model.figureStrategies.{Black, Team, White}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
-import ChessScala.model.interpreter.{Interpreter, SelectInterpreter}
+import ChessScala.model.interpreter.Interpreter
+import ChessScala.model.interpreter.interpreterImplementations.SelectInterpreter
 import ChessScala.model.moveChain.{CheckHandler, GameChain, MateHandler, SwitchHandler}
 
 

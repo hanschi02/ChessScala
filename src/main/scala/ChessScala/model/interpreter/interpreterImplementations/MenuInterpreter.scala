@@ -1,6 +1,6 @@
-package ChessScala.model.interpreter
+package ChessScala.model.interpreter.interpreterImplementations
 
-import ChessScala.model.interpreter.{GameInterpreter, Interpreter}
+import ChessScala.model.interpreter.Interpreter
 
 class MenuInterpreter extends Interpreter {
 

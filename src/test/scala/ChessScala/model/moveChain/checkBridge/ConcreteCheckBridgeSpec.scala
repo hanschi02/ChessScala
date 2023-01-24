@@ -1,8 +1,10 @@
 package ChessScala.model.moveChain.checkBridge
 
 import ChessScala.model.board.{BoardBuilder, Coordinate}
-import ChessScala.model.figureStrategies._
-import ChessScala.model.interpreter.{GameInterpreter, Interpreter}
+import ChessScala.model.figureStrategies.*
+import ChessScala.model.figureStrategies.strategyImplementations.{Queen, WhiteKing}
+import ChessScala.model.interpreter.Interpreter
+import ChessScala.model.interpreter.interpreterImplementations.GameInterpreter
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 

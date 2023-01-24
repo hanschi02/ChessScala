@@ -1,6 +1,7 @@
 package ChessScala.model.figureStrategies
 import org.scalatest.matchers.should.Matchers
 import ChessScala.model.board.{Board, BoardBuilder, Coordinate}
+import ChessScala.model.figureStrategies.strategyImplementations.{Bishop, Pawn}
 import org.scalatest.wordspec.AnyWordSpec
 
 class BishopSpec extends AnyWordSpec with Matchers {

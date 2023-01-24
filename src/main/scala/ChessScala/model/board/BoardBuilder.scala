@@ -1,8 +1,9 @@
 package ChessScala.model.board
 
 import ChessScala.model.board
-import ChessScala.model.figureStrategies._
-import ChessScala.model.figureStrategies.figureDecorators._
+import ChessScala.model.figureStrategies.*
+import ChessScala.model.figureStrategies.figureDecorators.*
+import ChessScala.model.figureStrategies.strategyImplementations.{Bishop, BlackKing, Knight, Queen, WhiteKing}
 
 class BoardBuilder(size : Int) {
   

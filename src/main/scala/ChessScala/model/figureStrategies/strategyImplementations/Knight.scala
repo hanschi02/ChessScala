@@ -1,6 +1,7 @@
-package ChessScala.model.figureStrategies
+package ChessScala.model.figureStrategies.strategyImplementations
 
 import ChessScala.model.board.{Board, Coordinate}
+import ChessScala.model.figureStrategies.{Black, Figure, Team}
 
 
 class Knight(override val team: Team) extends Figure(team) {

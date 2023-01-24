@@ -4,7 +4,8 @@ import ChessScala.model.board.{Board, BoardBuilder}
 import ChessScala.model.figureStrategies.White
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
-import ChessScala.model.interpreter.{GameInterpreter, Interpreter, MenuInterpreter}
+import ChessScala.model.interpreter.interpreterImplementations.{GameInterpreter, MenuInterpreter}
+import ChessScala.model.interpreter.Interpreter
 import com.google.inject.Inject
 
 class MenuState @Inject() extends ProgrammState {

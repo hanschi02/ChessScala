@@ -1,7 +1,8 @@
 package ChessScala.model.fileIO.fileIOXML
 
 import ChessScala.model.board.{BoardBuilder, Coordinate}
-import ChessScala.model.figureStrategies.{Pawn, White}
+import ChessScala.model.figureStrategies.White
+import ChessScala.model.figureStrategies.strategyImplementations.Pawn
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import ChessScala.model.fileIO.fileIOXML.FileIO

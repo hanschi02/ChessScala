@@ -1,8 +1,9 @@
 package ChessScala.model.moveChain
 
 import ChessScala.model.board.{Board, Coordinate}
-import ChessScala.model.figureStrategies.{BlackKing, Figure, King, Pawn, White, WhiteKing, Rook}
+import ChessScala.model.figureStrategies.{Figure, White}
 import ChessScala.model.figureStrategies.figureDecorators.{CastleRook, EnPassantPawn}
+import ChessScala.model.figureStrategies.strategyImplementations.{BlackKing, King, Pawn, Rook, WhiteKing}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.GameState
 import com.google.inject.internal.InternalFlags.ColorizeOption

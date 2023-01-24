@@ -1,6 +1,7 @@
-package ChessScala.model.interpreter
+package ChessScala.model.interpreter.interpreterImplementations
 
 import ChessScala.model.figureStrategies.Team
+import ChessScala.model.interpreter.Interpreter
 
 class SelectInterpreter extends Interpreter {
 

@@ -2,6 +2,7 @@ package ChessScala.model.figureStrategies
 import org.scalatest.matchers.should.Matchers
 import ChessScala.model.board.{Board, BoardBuilder, Coordinate}
 import ChessScala.model.figureStrategies.figureDecorators.EnPassantPawn
+import ChessScala.model.figureStrategies.strategyImplementations.Pawn
 import org.scalatest.wordspec.AnyWordSpec
 
 class PawnSpec extends AnyWordSpec with Matchers {

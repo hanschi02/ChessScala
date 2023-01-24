@@ -1,6 +1,8 @@
-package ChessScala.model.factory
+package ChessScala.model.factory.factoryImplementation
 
-import ChessScala.model.figureStrategies._
+import ChessScala.model.factory.Factory
+import ChessScala.model.figureStrategies.*
+import ChessScala.model.figureStrategies.strategyImplementations.{Bishop, Knight, Queen, Rook}
 
 class FigureFactory(team : Team) extends Factory {
 

@@ -1,4 +1,5 @@
 package ChessScala.model.board
+
 import ChessScala.model.figureStrategies.{Black, Figure, Team, White}
 
 class Board(val map: Map[Coordinate, Option[Figure]]) {

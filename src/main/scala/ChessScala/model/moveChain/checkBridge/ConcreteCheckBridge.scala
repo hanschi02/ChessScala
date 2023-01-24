@@ -1,7 +1,8 @@
 package ChessScala.model.moveChain.checkBridge
 
 import ChessScala.model.board.{Board, Coordinate}
-import ChessScala.model.figureStrategies.{Black, BlackKing, Team, White, WhiteKing}
+import ChessScala.model.figureStrategies.{Black, Team, White}
+import ChessScala.model.figureStrategies.strategyImplementations.{BlackKing, WhiteKing}
 
 class ConcreteCheckBridge extends CheckBridge {
 

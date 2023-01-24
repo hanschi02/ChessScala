@@ -1,10 +1,10 @@
 package ChessScala.view.gui
 
 import ChessScala.controller.IController
+import ChessScala.model.figureStrategies.White
 import ChessScala.model.gameState.*
 import ChessScala.model.gameState.stateImplementation.{GameState, MateState, MenuState, SelectState}
 import ChessScala.util.Observer
-import ChessScala.model.figureStrategies.White
 
 import javax.swing.{ImageIcon, JDialog, JOptionPane, WindowConstants}
 import scala.swing.*

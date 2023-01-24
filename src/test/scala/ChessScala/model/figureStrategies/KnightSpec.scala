@@ -1,5 +1,6 @@
 package ChessScala.model.figureStrategies
 import ChessScala.model.board.{Board, BoardBuilder, Coordinate}
+import ChessScala.model.figureStrategies.strategyImplementations.{Knight, Pawn}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 

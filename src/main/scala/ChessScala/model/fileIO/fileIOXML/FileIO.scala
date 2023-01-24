@@ -1,7 +1,7 @@
 package ChessScala.model.fileIO.fileIOXML
 
 import ChessScala.model.board.{Board, BoardBuilder, Coordinate}
-import ChessScala.model.factory.IdFactory
+import ChessScala.model.factory.factoryImplementation.IdFactory
 import ChessScala.model.figureStrategies.{Black, Figure, Team, White}
 import ChessScala.model.fileIO.FileIOInterface
 import ChessScala.model.gameState.*

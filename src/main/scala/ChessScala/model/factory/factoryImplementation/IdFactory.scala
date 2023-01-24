@@ -1,7 +1,9 @@
-package ChessScala.model.factory
+package ChessScala.model.factory.factoryImplementation
 
+import ChessScala.model.factory.Factory
 import ChessScala.model.figureStrategies.*
 import ChessScala.model.figureStrategies.figureDecorators.{CastleRook, EnPassantPawn, GroundPawn}
+import ChessScala.model.figureStrategies.strategyImplementations.{Bishop, BlackKing, Knight, Pawn, Queen, Rook, WhiteKing}
 
 class IdFactory extends Factory {
 

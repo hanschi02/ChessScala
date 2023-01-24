@@ -1,5 +1,7 @@
 package ChessScala.model.figureStrategies.figureDecorators
-import ChessScala.model.figureStrategies.{Figure, Rook, Team, White}
+
+import ChessScala.model.figureStrategies.strategyImplementations.Rook
+import ChessScala.model.figureStrategies.{Figure, Team, White}
 
 class CastleRook(team: Team) extends Rook(team){
   override val get: Figure = new Rook(team)

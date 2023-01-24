@@ -1,6 +1,7 @@
 package ChessScala.model.figureStrategies.figureDecorators
 import ChessScala.model.board.{Board, Coordinate}
-import ChessScala.model.figureStrategies.{Black, Figure, Pawn, Team}
+import ChessScala.model.figureStrategies.strategyImplementations.Pawn
+import ChessScala.model.figureStrategies.{Black, Figure, Team}
 
 class GroundPawn(team: Team) extends Pawn(team) {
 

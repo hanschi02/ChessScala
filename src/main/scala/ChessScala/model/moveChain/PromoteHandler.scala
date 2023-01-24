@@ -1,7 +1,8 @@
 package ChessScala.model.moveChain
-import ChessScala.model.figureStrategies.{Pawn, White}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.board.Coordinate
+import ChessScala.model.figureStrategies.White
+import ChessScala.model.figureStrategies.strategyImplementations.Pawn
 import ChessScala.model.gameState.stateImplementation.{GameState, SelectState}
 
 class PromoteHandler(target: Coordinate) extends GameChain {

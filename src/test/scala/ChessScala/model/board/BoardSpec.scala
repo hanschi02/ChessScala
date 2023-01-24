@@ -2,7 +2,8 @@ package ChessScala.model.board
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import ChessScala.model.board.{BoardBuilder, Coordinate}
-import ChessScala.model.figureStrategies.{Pawn, Queen, White, WhiteKing}
+import ChessScala.model.figureStrategies.White
+import ChessScala.model.figureStrategies.strategyImplementations.{Pawn, Queen, WhiteKing}
 
 class BoardSpec extends AnyWordSpec with Matchers {
   "a board" should {

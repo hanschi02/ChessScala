@@ -1,7 +1,8 @@
 package ChessScala.model.moveChain
 
 import ChessScala.model.board.{Board, Coordinate}
-import ChessScala.model.figureStrategies.{Black, BlackKing, Figure, Team, White, WhiteKing}
+import ChessScala.model.figureStrategies.strategyImplementations.{BlackKing, WhiteKing}
+import ChessScala.model.figureStrategies.{Black, Figure, Team, White}
 import ChessScala.model.gameState.ProgrammState
 import ChessScala.model.gameState.stateImplementation.{GameState, MateState}
 import ChessScala.model.moveChain.checkBridge.ConcreteCheckBridge
