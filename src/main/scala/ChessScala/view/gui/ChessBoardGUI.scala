@@ -50,7 +50,7 @@ class ChessBoardGUI(controller : IController)  extends FlowPanel {
         reactions += {
           case ButtonClicked(`button`) =>
             val input = ('a' + (j - 1)).toChar+""+(9 - i)
-            if(buttonPressed.isBlank) {
+            if(buttonPressed.isEmpty) {
               buttonPressed = input
             } else {
               controller.computeInput(buttonPressed+input)

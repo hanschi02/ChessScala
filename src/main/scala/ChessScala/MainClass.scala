@@ -12,7 +12,7 @@ object MainClass {
   val controller: IController = injector.getInstance(classOf[IController])
 
   val tui = new TUI(controller)
-  //val gui = new GUI(controller)
+  val gui = new GUI(controller)
 
   @main def main():Unit =
     while(true){

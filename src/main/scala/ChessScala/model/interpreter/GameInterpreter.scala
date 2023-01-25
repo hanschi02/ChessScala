@@ -1,6 +1,5 @@
 package ChessScala.model.interpreter
 
-import jdk.javadoc.internal.doclets.toolkit.util.DocFinder.Input
 
 
 class GameInterpreter extends Interpreter {
