@@ -5,8 +5,10 @@ import ChessScala.util.Observer
 import ChessScala.controller.IController
 import ChessScala.model.interpreter.Interpreter
 import ChessScala.model.interpreter.interpreterImplementations.MenuInterpreter
+import com.typesafe.scalalogging.{LazyLogging, Logger}
 
-class TUI(controller: IController) extends Observer {
+
+class TUI(controller: IController) extends Observer with LazyLogging {
 
   controller.add(this)
 
@@ -15,5 +17,5 @@ class TUI(controller: IController) extends Observer {
     controller.computeInput(StdIn.readLine())
 
   override def update(): Unit =
-    println(controller.output)
+    logger.info(controller.output)
 }

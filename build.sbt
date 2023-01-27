@@ -17,6 +17,8 @@ lazy val root = (project in file("."))
     libraryDependencies += "com.typesafe.play" %% "play-json" % "2.10.0-RC7",
     libraryDependencies += "com.google.inject" % "guice" % "5.1.0",
     libraryDependencies += ("net.codingwell" %% "scala-guice" % "5.1.0").cross(CrossVersion.for3Use2_13),
+    libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.3",
+    libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.4",
   )
 
 
